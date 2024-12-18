@@ -1,0 +1,1247 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>TensorFlow执行模式 | </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter4/section8.html" />
+    
+    
+    <link rel="prev" href="../chapter4/section6.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.7"
+        data-chapter-title="TensorFlow执行模式"
+        data-filepath="chapter4/section7.md"
+        data-basepath=".."
+        data-revision="Sat Apr 10 2021 19:19:20 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        计算机视觉与深度学习课程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1/index.html">
+            
+                
+                    <a href="../chapter1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        计算机视觉简介
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter1/section1.html">
+            
+                
+                    <a href="../chapter1/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        计算机视觉概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1/section2.html">
+            
+                
+                    <a href="../chapter1/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        计算机视觉任务
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2/index.html">
+            
+                
+                    <a href="../chapter2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        图像分类1(Image Classification)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/section1.html">
+            
+                
+                    <a href="../chapter2/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        图像分类介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2/section2.html">
+            
+                
+                    <a href="../chapter2/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        神经网络(NN)简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter2/section3.html">
+            
+                
+                    <a href="../chapter2/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        分类器及损失
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter2/section4.html">
+            
+                
+                    <a href="../chapter2/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        神经网络最优化过程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="chapter2/section5.html">
+            
+                
+                    <a href="../chapter2/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        浅层/深层神经网络
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter3/index.html">
+            
+                
+                    <a href="../chapter3/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        图像分类2(Image Classification)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter3/section1.html">
+            
+                
+                    <a href="../chapter3/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        深度学习优化算法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter3/section2.html">
+            
+                
+                    <a href="../chapter3/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        深度学习正则化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter3/section3.html">
+            
+                
+                    <a href="../chapter3/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        卷积神经网络(CNN)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter3/section4.html">
+            
+                
+                    <a href="../chapter3/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        CNN架构
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4/index.html">
+            
+                
+                    <a href="../chapter4/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        深入浅出Tensorflow
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter4/section1.html">
+            
+                
+                    <a href="../chapter4/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter4/section2.html">
+            
+                
+                    <a href="../chapter4/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter4/section3.html">
+            
+                
+                    <a href="../chapter4/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        快速入门模型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="chapter4/section4.html">
+            
+                
+                    <a href="../chapter4/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        TF搭建CNN分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="chapter4/section5.html">
+            
+                
+                    <a href="../chapter4/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Keras Pipline与自定义模型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="chapter4/section6.html">
+            
+                
+                    <a href="../chapter4/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        TensorFlow常用功能模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.7" data-path="chapter4/section7.html">
+            
+                
+                    <a href="../chapter4/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        TensorFlow执行模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="chapter4/section8.html">
+            
+                
+                    <a href="../chapter4/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        TensorFlow分布式训练
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="chapter4/section9.html">
+            
+                
+                    <a href="../chapter4/section9.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        综合案例：垃圾分类之模型构建
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="chapter4/section10.html">
+            
+                
+                    <a href="../chapter4/section10.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.</b>
+                        
+                        综合案例：垃圾分类之训练、推理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="chapter4/section11.html">
+            
+                
+                    <a href="../chapter4/section11.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.11.</b>
+                        
+                        综合案例：模型导出与部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5/index.html">
+            
+                
+                    <a href="../chapter5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        目标检测(Object Detection)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="chapter5/section1.html">
+            
+                
+                    <a href="../chapter5/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        目标检测概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="chapter5/section2.html">
+            
+                
+                    <a href="../chapter5/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        R-CNN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="chapter5/section3.html">
+            
+                
+                    <a href="../chapter5/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        SPPNet
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="chapter5/section4.html">
+            
+                
+                    <a href="../chapter5/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Fast R-CNN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="chapter5/section5.html">
+            
+                
+                    <a href="../chapter5/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Faster R-CNN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="chapter5/section6.html">
+            
+                
+                    <a href="../chapter5/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Faster RCNN接口分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="chapter5/section7.html">
+            
+                
+                    <a href="../chapter5/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        YOLO算法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="chapter5/section8.html">
+            
+                
+                    <a href="../chapter5/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        YOLOV2&amp;V3
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="chapter5/section9.html">
+            
+                
+                    <a href="../chapter5/section9.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        SSD算法原理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="chapter5/section10.html">
+            
+                
+                    <a href="../chapter5/section10.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        案例：KITTI人、车检测案例-数据集处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="chapter5/section11.html">
+            
+                
+                    <a href="../chapter5/section11.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.11.</b>
+                        
+                        案例：KITTI人、车检测案例-训练、检测
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter6/index.html">
+            
+                
+                    <a href="../chapter6/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        目标分割(Object Segmentation)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="chapter6/section1.html">
+            
+                
+                    <a href="../chapter6/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        目标分割介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="chapter6/section2.html">
+            
+                
+                    <a href="../chapter6/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        FCN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="chapter6/section3.html">
+            
+                
+                    <a href="../chapter6/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        SegNet与U-Net
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="chapter6/section4.html">
+            
+                
+                    <a href="../chapter6/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        DeepLab系列
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="chapter6/section5.html">
+            
+                
+                    <a href="../chapter6/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        DeepLab V2 &amp; V3&amp; V3+
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="chapter6/section6.html">
+            
+                
+                    <a href="../chapter6/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        Mask RCNN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="chapter6/section7.html">
+            
+                
+                    <a href="../chapter6/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        Mask RCNN分割案例1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="chapter6/section8.html">
+            
+                
+                    <a href="../chapter6/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        Mask RCNN分割案例2
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="chapter7/index.html">
+            
+                
+                    <a href="../chapter7/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        视频跟踪任务
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="chapter7/section1.html">
+            
+                
+                    <a href="../chapter7/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        目标追踪(Object Tracking)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="chapter7/section2.html">
+            
+                
+                    <a href="../chapter7/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        FCNT
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="chapter7/section3.html">
+            
+                
+                    <a href="../chapter7/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        GOTURN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="chapter7/section4.html">
+            
+                
+                    <a href="../chapter7/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        SiamFC
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" ></a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="47-tensorflow&#x6267;&#x884C;&#x6A21;&#x5F0F;">4.7 Tensorflow&#x6267;&#x884C;&#x6A21;&#x5F0F;</h1>
+<h2 id="&#x5B66;&#x4E60;&#x76EE;&#x6807;">&#x5B66;&#x4E60;&#x76EE;&#x6807;</h2>
+<ul>
+<li>&#x76EE;&#x6807;<ul>
+<li>&#x638C;&#x63E1;tf&#x7684;&#x56FE;&#x6267;&#x884C;&#x6A21;&#x5F0F;&#x539F;&#x7406;&#x4E0E;&#x4F1A;&#x8BDD;&#x6A21;&#x5F0F;&#x7684;&#x533A;&#x522B;</li>
+</ul>
+</li>
+<li>&#x5E94;&#x7528;<ul>
+<li>&#x65E0;</li>
+</ul>
+</li>
+</ul>
+<h3 id="471-eager-execution&#x4E0E;graph-execution">4.7.1 Eager Execution&#x4E0E;Graph Execution</h3>
+<h4 id="4711-graph-execution&#xFF08;&#x56FE;&#x6A21;&#x5F0F;&#xFF09;">4.7.1.1 Graph Execution&#xFF08;&#x56FE;&#x6A21;&#x5F0F;&#xFF09;</h4>
+<ul>
+<li>&#x7279;&#x70B9;:<ul>
+<li>&#x9884;&#x5148;&#x5B9A;&#x4E49;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x53CD;&#x590D;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x80FD;&#x6539;&#x53D8;</li>
+<li>&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#xFF0C;&#x9002;&#x5408;&#x5927;&#x89C4;&#x6A21;&#x90E8;&#x7F72;&#xFF0C;&#x9002;&#x5408;&#x5D4C;&#x5165;&#x5F0F;&#x5E73;&#x53F0;</li>
+</ul>
+</li>
+</ul>
+<p>TensorFlow &#x7684;&#x56FE;&#x6267;&#x884C;&#x6A21;&#x5F0F;&#x662F;&#x4E00;&#x4E2A;&#x7B26;&#x53F7;&#x5F0F;&#x7684;&#xFF08;&#x57FA;&#x4E8E;&#x8BA1;&#x7B97;&#x56FE;&#x7684;&#xFF09;&#x8BA1;&#x7B97;&#x6846;&#x67B6;&#x3002;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x7CFB;&#x5217;&#x8BA1;&#x7B97;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4F9D;&#x6B21;&#x8FDB;&#x884C;&#x5982;&#x4E0B;&#x4E24;&#x6B65;&#xFF1A;</p>
+<ul>
+<li><p>1&#x3001;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A; &#x201C;&#x8BA1;&#x7B97;&#x56FE;&#x201D;&#xFF0C;&#x8FD9;&#x4E2A;&#x56FE;&#x63CF;&#x8FF0;&#x4E86;&#x5982;&#x4F55;&#x5C06;&#x8F93;&#x5165;&#x6570;&#x636E;&#x901A;&#x8FC7;&#x4E00;&#x7CFB;&#x5217;&#x8BA1;&#x7B97;&#x800C;&#x5F97;&#x5230;&#x8F93;&#x51FA;&#xFF1B;</p>
+</li>
+<li><p>2&#x3001;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#xFF0C;&#x5E76;&#x5728;&#x4F1A;&#x8BDD;&#x4E2D;&#x4E0E;&#x8BA1;&#x7B97;&#x56FE;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x5373;&#x5411;&#x8BA1;&#x7B97;&#x56FE;&#x4F20;&#x5165;&#x8BA1;&#x7B97;&#x6240;&#x9700;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4ECE;&#x8BA1;&#x7B97;&#x56FE;&#x4E2D;&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x3002;</p>
+<ul>
+<li>Session &#x7528;&#x6765;<strong>&#x7ED9;&#x5B9A; Graph &#x7684;&#x8F93;&#x5165;&#xFF0C;&#x6307;&#x5B9A; Graph &#x4E2D;&#x7684;&#x7ED3;&#x679C;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;&#xFF0C; &#x5E76;&#x542F;&#x52A8;&#x6570;&#x636E;&#x5728; Graph &#x4E2D;&#x7684;&#x6D41;&#x52A8;</strong></li>
+<li>&#x62E5;&#x6709;&#x5E76;&#x7BA1;&#x7406; Tensorflow &#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x6240;&#x6709;&#x8D44;&#x6E90;&#xFF0C;&#x8D44;&#x6E90;&#x5305;&#x62EC;:&#x786C;&#x4EF6;(CPU,GPU)&#xFF0C;&#x6570;&#x636E;</li>
+</ul>
+</li>
+</ul>
+<p>&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x56FE;&#x4E0E;&#x4F1A;&#x8BDD;&#x8FDB;&#x884C;&#x57FA;&#x672C;&#x8FD0;&#x7B97;&#xFF0C;&#x8FD9;&#x91CC;&#x505A;&#x4E00;&#x4E2A;&#x6700;&#x57FA;&#x672C;&#x7684;&#x8FD0;&#x7B97;&#x793A;&#x4F8B;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> tensorflow.compat.v1 <span class="hljs-keyword">as</span> tf
+tf.disable_eager_execution()
+
+<span class="hljs-comment"># 1&#x3001;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x201C;&#x8BA1;&#x7B97;&#x56FE;&#x201D;</span>
+a = tf.constant(<span class="hljs-number">1</span>)
+b = tf.constant(<span class="hljs-number">1</span>)
+<span class="hljs-comment"># &#x7B49;&#x4EF7;&#x4E8E; c = tf.add(a, b)&#xFF0C;c&#x662F;&#x5F20;&#x91CF;a&#x548C;&#x5F20;&#x91CF;b&#x901A;&#x8FC7; tf.add &#x8FD9;&#x4E00;&#x64CD;&#x4F5C;&#xFF08;Operation&#xFF09;&#x6240;&#x5F62;&#x6210;&#x7684;&#x65B0;&#x5F20;&#x91CF;</span>
+c = a + b  
+
+<span class="hljs-comment"># 2&#x3001;# &#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;&#xFF08;Session&#xFF09;</span>
+<span class="hljs-comment"># &#x901A;&#x8FC7;&#x4F1A;&#x8BDD;&#x7684; run() &#x65B9;&#x6CD5;&#x5BF9;&#x8BA1;&#x7B97;&#x56FE;&#x91CC;&#x7684;&#x8282;&#x70B9;&#xFF08;&#x5F20;&#x91CF;&#xFF09;&#x8FDB;&#x884C;&#x5B9E;&#x9645;&#x7684;&#x8BA1;&#x7B97;</span>
+sess = tf.Session()     
+c_ = sess.run(c)
+print(c_)
+</code></pre>
+<p>&#x6CE8;&#xFF1A;&#x4E3A;&#x4E86;&#x4F7F;&#x7528;&#x56FE;&#x6267;&#x884C;&#x6A21;&#x5F0F;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528; TensorFlow 1.X &#x7684; API &#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528; <code>import tensorflow.compat.v1 as tf</code> &#x5BFC;&#x5165; TensorFlow&#xFF0C;&#x5E76;&#x901A;&#x8FC7; <code>tf.disable_eager_execution()</code> &#x7981;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x5373;&#x65F6;&#x6267;&#x884C;&#x6A21;&#x5F0F;&#x3002;</p>
+<h4 id="4712-eager-execution&#xFF08;&#x52A8;&#x6001;&#x56FE;&#x6A21;&#x5F0F;&#xFF09;">4.7.1.2 Eager Execution&#xFF08;&#x52A8;&#x6001;&#x56FE;&#x6A21;&#x5F0F;&#xFF09;</h4>
+<p>eager &#x6A21;&#x5F0F;&#x662F;&#x5728; TF 1.4 &#x7248;&#x672C;&#x4E4B;&#x540E;&#x5F15;&#x5165;&#x7684;&#xFF0C;&#x5728; TF 2.0&#x4E4B;&#x540E;&#x5C06;&#x4F1A;&#x628A; eager &#x6A21;&#x5F0F;&#x53D8;&#x4E3A;&#x9ED8;&#x8BA4;&#x6267;&#x884C;&#x6A21;&#x5F0F;&#x3002;TensorFlow 2.0 &#x4E2D;&#x7684; Eager Execution &#x662F;&#x4E00;&#x79CD;&#x547D;&#x4EE4;&#x5F0F;&#x7F16;&#x7A0B;&#x73AF;&#x5883;&#xFF0C;&#x53EF;&#x7ACB;&#x5373;&#x8BC4;&#x4F30;&#x64CD;&#x4F5C;&#xFF0C;&#x65E0;&#x9700;&#x6784;&#x5EFA;&#x56FE;&#xFF1A;&#x64CD;&#x4F5C;&#x4F1A;&#x8FD4;&#x56DE;&#x5177;&#x4F53;&#x7684;&#x503C;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6784;&#x5EFA;&#x4EE5;&#x540E;&#x518D;&#x8FD0;&#x884C;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x3002;</p>
+<p>Eager Execution &#x7684;&#x4F18;&#x70B9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>1&#x3001;&#x5FEB;&#x901F;&#x8C03;&#x8BD5;&#x5373;&#x523B;&#x7684;&#x8FD0;&#x884C;&#x9519;&#x8BEF;&#x5E76;&#x901A;&#x8FC7; Python &#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x6574;&#x5408;</li>
+<li>2&#x3001;&#x501F;&#x52A9;&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x7684; Python &#x63A7;&#x5236;&#x6D41;&#x652F;&#x6301;&#x52A8;&#x6001;&#x6A21;&#x578B;</li>
+<li>3&#x3001;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x548C;&#x9AD8;&#x9636;&#x68AF;&#x5EA6;&#x63D0;&#x4F9B;&#x5F3A;&#x5927;&#x652F;&#x6301;</li>
+<li>4&#x3001;&#x9002;&#x7528;&#x4E8E;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x53EF;&#x7528;&#x7684; TensorFlow &#x8FD0;&#x7B97;</li>
+</ul>
+<p>TensorFlow 2.0&#x5F15;&#x5165;&#x7684;eager&#x63D0;&#x9AD8;&#x4E86;&#x4EE3;&#x7801;&#x7684;&#x7B80;&#x6D01;&#x6027;&#xFF0C;&#x800C;&#x4E14;&#x66F4;&#x5BB9;&#x6613;debug&#x3002;<strong>&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x6027;&#x80FD;&#x6765;&#x8BF4;&#xFF0C;eager&#x6267;&#x884C;&#x76F8;&#x6BD4;Graph&#x6A21;&#x5F0F;&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x635F;&#x5931;&#x3002;&#x6BD5;&#x7ADF;&#x539F;&#x751F;&#x7684;Graph&#x6A21;&#x5F0F;&#x662F;&#x5148;&#x6784;&#x5EFA;&#x597D;&#x9759;&#x6001;&#x56FE;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x771F;&#x6B63;&#x6267;&#x884C;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E; &#x5728;&#x5206;&#x5E03;&#x5F0F;&#x8BAD;&#x7EC3;&#x3001;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x548C;&#x751F;&#x4EA7;&#x90E8;&#x7F72;&#x65B9;&#x9762;&#x5177;&#x6709;&#x4F18;&#x52BF;&#x3002;</strong>&#x4F46;&#x662F;&#x597D;&#x5728;&#xFF0C;TensorFlow 2.0&#x5F15;&#x5165;&#x4E86;tf.function&#x548C;AutoGraph&#x6765;&#x7F29;&#x5C0F;eager&#x6267;&#x884C;&#x548C;Graph&#x6A21;&#x5F0F;&#x7684;&#x6027;&#x80FD;&#x5DEE;&#x8DDD;&#xFF0C;&#x5176;&#x6838;&#x5FC3;&#x662F;&#x5C06;&#x4E00;&#x7CFB;&#x5217;&#x7684;Python&#x8BED;&#x6CD5;&#x8F6C;&#x5316;&#x4E3A;&#x9AD8;&#x6027;&#x80FD;&#x7684;graph&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code>&#x6CE8;&#xFF1A;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;Eager Execution &#x5728; 1.x &#x7684;&#x540E;&#x671F;&#x7248;&#x672C;&#x4E2D;&#x4E5F;&#x5B58;&#x5728;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x5355;&#x72EC;&#x6267;&#x884C; tf.enable_eager_execution() &#x8FDB;&#x884C;&#x624B;&#x52A8;&#x542F;&#x7528;&#x3002;
+</code></pre><h3 id="472-tffunction&#x5B9E;&#x73B0;graph-execution-&#x6A21;&#x5F0F;">4.7.2 @tf.function&#x5B9E;&#x73B0;Graph Execution &#x6A21;&#x5F0F;</h3>
+<p>&#x5728; TensorFlow 2.0 &#x4E2D;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; @tf.function &#xFF08;&#x800C;&#x975E; 1.X &#x4E2D;&#x7684; tf.Session &#xFF09;&#x5B9E;&#x73B0; Graph Execution&#xFF0C;&#x4ECE;&#x800C;&#x5C06;&#x6A21;&#x578B;&#x8F6C;&#x6362;&#x4E3A;&#x6613;&#x4E8E;&#x90E8;&#x7F72;&#x4E14;&#x9AD8;&#x6027;&#x80FD;&#x7684; TensorFlow &#x56FE;&#x6A21;&#x578B;&#x3002;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x4EE5; Graph Execution &#x6A21;&#x5F0F;&#x8FD0;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5185;&#xFF0C;&#x5E76;&#x5728;&#x51FD;&#x6570;&#x524D;&#x52A0;&#x4E0A; @tf.function &#x5373;&#x53EF;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x57FA;&#x4E8E; <code>tf.function</code> &#x7684;&#x4EE3;&#x7801;&#x7B49;&#x4EF7;&#x53BB;&#x6267;&#x884C;&#x56FE;&#x6A21;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+
+<span class="hljs-decorator">@tf.function</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">graph</span><span class="hljs-params">()</span>:</span>
+    a = tf.constant(<span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#x5F20;&#x91CF;&#xFF08;Tensor&#xFF09;</span>
+    b = tf.constant(<span class="hljs-number">1</span>)
+    c = a + b
+    <span class="hljs-keyword">return</span> c
+
+c_ = graph()
+print(c_.numpy())
+</code></pre>
+<ul>
+<li>&#x5E76;&#x4E0D;&#x662F;&#x4EFB;&#x4F55;&#x51FD;&#x6570;&#x90FD;&#x53EF;&#x4EE5;&#x88AB; @tf.function &#x4FEE;&#x9970;&#xFF01;@tf.function &#x4F7F;&#x7528;&#x9759;&#x6001;&#x7F16;&#x8BD1;&#x5C06;&#x51FD;&#x6570;&#x5185;&#x7684;&#x4EE3;&#x7801;&#x8F6C;&#x6362;&#x6210;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x51FD;&#x6570;&#x5185;&#x53EF;&#x4F7F;&#x7528;&#x7684;&#x8BED;&#x53E5;&#x6709;&#x4E00;&#x5B9A;&#x9650;&#x5236;&#xFF0C;&#x4E14;&#x9700;&#x8981;&#x51FD;&#x6570;&#x5185;&#x7684;&#x64CD;&#x4F5C;&#x672C;&#x8EAB;&#x80FD;&#x591F;&#x88AB;&#x6784;&#x5EFA;&#x4E3A;&#x8BA1;&#x7B97;&#x56FE;&#x3002;<ul>
+<li>&#x5EFA;&#x8BAE;&#x5728;&#x51FD;&#x6570;&#x5185;&#x53EA;&#x4F7F;&#x7528;TensorFlow &#x7684;&#x539F;&#x751F;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#x7684; Python &#x8BED;&#x53E5;&#xFF0C;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x53EA;&#x5305;&#x62EC; TensorFlow &#x5F20;&#x91CF;&#x6216; NumPy &#x6570;&#x7EC4;&#xFF0C;&#x5E76;&#x6700;&#x597D;&#x662F;&#x80FD;&#x591F;&#x6309;&#x7167;&#x8BA1;&#x7B97;&#x56FE;&#x7684;&#x601D;&#x60F3;&#x53BB;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+
+<span class="hljs-decorator">@tf.function</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">train_one_step</span><span class="hljs-params">(X, y)</span>:</span>    
+    <span class="hljs-keyword">with</span> tf.GradientTape() <span class="hljs-keyword">as</span> tape:
+        y_pred = model(X)
+        loss = tf.keras.losses.sparse_categorical_crossentropy(y_true=y, y_pred=y_pred)
+        loss = tf.reduce_mean(loss)
+        <span class="hljs-comment"># &#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;TensorFlow&#x5185;&#x7F6E;&#x7684;tf.print()</span>
+        <span class="hljs-comment"># @tf.function&#x4E0D;&#x652F;&#x6301;Python&#x5185;&#x7F6E;&#x7684;print&#x65B9;&#x6CD5;&#x53BB;&#x5F53;&#x505A;&#x8BA1;&#x7B97;&#x8282;&#x70B9;</span>
+        tf.print(<span class="hljs-string">&quot;loss&quot;</span>, loss)  
+    grads = tape.gradient(loss, model.variables)
+    optimizer.apply_gradients(grads_and_vars=zip(grads, model.variables))
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    model = CNN()
+    optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
+    start_time = time.time()
+    <span class="hljs-keyword">for</span> batch_index <span class="hljs-keyword">in</span> range(num_batches):
+        X, y = data_loader.get_batch(batch_size)
+        train_one_step(X, y)
+    end_time = time.time()
+    print(end_time - start_time)
+</code></pre>
+<h4 id="4722-tffunction-&#x673A;&#x5236;&#x539F;&#x7406;">4.7.2.2 @tf.function &#x673A;&#x5236;&#x539F;&#x7406;</h4>
+<p> &#x5F53;&#x88AB; @tf.function &#x4FEE;&#x9970;&#x7684;&#x51FD;&#x6570;&#x7B2C;&#x4E00;&#x6B21;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FDB;&#x884C;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li><p>1&#x3001;&#x5728; Eager Execution &#x6A21;&#x5F0F;&#x5173;&#x95ED;&#x7684;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x51FD;&#x6570;&#x5185;&#x7684;&#x4EE3;&#x7801;&#x4F9D;&#x6B21;&#x8FD0;&#x884C;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6BCF;&#x4E2A; tf. &#x65B9;&#x6CD5;&#x90FD;&#x53EA;&#x662F;&#x5B9A;&#x4E49;&#x4E86;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#xFF0C;&#x800C;&#x5E76;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x5B9E;&#x8D28;&#x7684;&#x8BA1;&#x7B97;&#x3002;&#x8FD9;&#x4E0E; TensorFlow 1.X &#x7684; Graph Execution &#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF1B;</p>
+</li>
+<li><p>2&#x3001;&#x4F7F;&#x7528; AutoGraph &#x5C06;&#x51FD;&#x6570;&#x4E2D;&#x7684; Python &#x63A7;&#x5236;&#x6D41;&#x8BED;&#x53E5;&#x8F6C;&#x6362;&#x6210; TensorFlow &#x8BA1;&#x7B97;&#x56FE;&#x4E2D;&#x7684;&#x5BF9;&#x5E94;&#x8282;&#x70B9;&#xFF08;&#x6BD4;&#x5982;&#x8BF4; while &#x548C; for &#x8BED;&#x53E5;&#x8F6C;&#x6362;&#x4E3A; tf.while &#xFF0C; if &#x8BED;&#x53E5;&#x8F6C;&#x6362;&#x4E3A; tf.cond &#x7B49;&#x7B49;&#xFF1B;</p>
+</li>
+<li><p>3&#x3001;&#x57FA;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x4E24;&#x6B65;&#xFF0C;&#x5EFA;&#x7ACB;&#x51FD;&#x6570;&#x5185;&#x4EE3;&#x7801;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x8868;&#x793A;&#xFF1B;&#x7136;&#x540E;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x8FD9;&#x4E2A;&#x8BA1;&#x7B97;&#x56FE;&#xFF1B;</p>
+<ul>
+<li>&#x57FA;&#x4E8E;&#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57;&#x548C;&#x8F93;&#x5165;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x503C;&#xFF0C;&#x5E76;&#x5C06;&#x5EFA;&#x7ACB;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x7F13;&#x5B58;&#x5230;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>&#x5982;&#x679C;&#x5728;&#x88AB; @tf.function &#x4FEE;&#x9970;&#x7684;&#x51FD;&#x6570;&#x4E4B;&#x540E;&#x518D;&#x6B21;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6839;&#x636E;&#x51FD;&#x6570;&#x540D;&#x548C;&#x8F93;&#x5165;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x8BA1;&#x7B97;&#x54C8;&#x5E0C;&#x503C;&#xFF0C;&#x68C0;&#x67E5;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x5BF9;&#x5E94;&#x8BA1;&#x7B97;&#x56FE;&#x7684;&#x7F13;&#x5B58;&#x3002;&#x5982;&#x679C;&#x662F;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5DF2;&#x7F13;&#x5B58;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x5426;&#x5219;&#x91CD;&#x65B0;&#x6309;&#x4E0A;&#x8FF0;&#x6B65;&#x9AA4;&#x5EFA;&#x7ACB;&#x8BA1;&#x7B97;&#x56FE;&#x3002;</li>
+</ul>
+<h5 id="1&#x3001;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x4F53;&#x73B0;tffunction&#x6574;&#x4E2A;&#x8BA1;&#x7B97;&#x6B65;&#x9AA4;&#xFF1A;">1&#x3001;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x4F53;&#x73B0;tf.function&#x6574;&#x4E2A;&#x8BA1;&#x7B97;&#x6B65;&#x9AA4;&#xFF1A;</h5>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-decorator">@tf.function</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span><span class="hljs-params">(x)</span>:</span>
+      <span class="hljs-comment"># &#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x662F;print&#xFF0C;&#x4E0D;&#x662F;tf.print</span>
+    print(<span class="hljs-string">&quot;The function is running in Python&quot;</span>)
+    tf.print(x)
+
+<span class="hljs-comment"># &#x8FD0;&#x884C;&#x8FC7;&#x7A0B;</span>
+a = tf.constant(<span class="hljs-number">1</span>, dtype=tf.int32)
+f(a)
+b = tf.constant(<span class="hljs-number">2</span>, dtype=tf.int32)
+f(b)
+b_array = np.array(<span class="hljs-number">2</span>, dtype=np.int32)
+f(b_array)
+c = tf.constant(<span class="hljs-number">0.1</span>, dtype=tf.float32)
+f(c)
+d = tf.constant(<span class="hljs-number">0.2</span>, dtype=tf.float32)
+f(d)
+
+<span class="hljs-comment"># &#x5BF9;&#x4E8E;Python&#x7684;&#x7C7B;&#x578B;</span>
+f(<span class="hljs-number">1</span>)
+f(<span class="hljs-number">2</span>)
+f(<span class="hljs-number">1</span>)
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x7A0B;&#x5E8F;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x662F;&#xFF1F;&#x7B54;&#x6848;&#x662F;:</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Tensor&#x7C7B;&#x578B;</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+<span class="hljs-number">2</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">0.1</span>
+<span class="hljs-number">0.2</span>
+
+<span class="hljs-comment"># Python&#x7C7B;&#x578B;</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">1</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">2</span>
+<span class="hljs-number">1</span>
+</code></pre>
+<p>&#x5F53;&#x8BA1;&#x7B97; f(a) &#x65F6;&#xFF0C;&#x7531;&#x4E8E;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;&#xFF0C;TensorFlow &#x8FDB;&#x884C;&#x4E86;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li><p>1&#x3001;&#x5C06;&#x51FD;&#x6570;&#x5185;&#x7684;&#x4EE3;&#x7801;&#x4F9D;&#x6B21;&#x8FD0;&#x884C;&#x4E86;&#x4E00;&#x904D;&#xFF1B;</p>
+</li>
+<li><p>2&#x3001;&#x6784;&#x5EFA;&#x4E86;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x7136;&#x540E;&#x8FD0;&#x884C;&#x4E86;&#x4E00;&#x6B21;&#x8BE5;&#x8BA1;&#x7B97;&#x56FE;&#xFF08;&#x56E0;&#x6B64;&#x8F93;&#x51FA;&#x4E86; 1&#xFF09;&#x3002;&#x8FD9;&#x91CC; tf.print(x) &#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8BA1;&#x7B97;&#x56FE;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x4F46; Python &#x5185;&#x7F6E;&#x7684; print &#x5219;&#x4E0D;&#x80FD;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x8BA1;&#x7B97;&#x56FE;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
+</li>
+<li><p>3&#x3001;&#x5C06;&#x8BE5;&#x8BA1;&#x7B97;&#x56FE;&#x7F13;&#x5B58;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#xFF08;&#x5982;&#x679C;&#x4E4B;&#x540E;&#x518D;&#x6709;&#x7C7B;&#x578B;&#x4E3A; tf.int32 &#xFF0C;shape &#x4E3A;&#x7A7A;&#x7684;&#x5F20;&#x91CF;&#x8F93;&#x5165;&#xFF0C;&#x5219;&#x91CD;&#x590D;&#x4F7F;&#x7528;&#x5DF2;&#x6784;&#x5EFA;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#xFF09;&#x3002;</p>
+</li>
+</ul>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x7B2C;&#x4E8C;&#x6B21;&#x8BA1;&#x7B97;&#x4E4B;&#x540E;</p>
+<ul>
+<li><p>&#x4E00;&#x3001;&#x8BA1;&#x7B97; f(b) &#x65F6;&#xFF0C;&#x7531;&#x4E8E; b &#x7684;&#x7C7B;&#x578B;&#x4E0E; a &#x76F8;&#x540C;&#xFF0C;&#x6240;&#x4EE5; TensorFlow &#x91CD;&#x590D;&#x4F7F;&#x7528;&#x4E86;&#x4E4B;&#x524D;&#x5DF2;&#x6784;&#x5EFA;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x5E76;&#x8FD0;&#x884C;&#xFF08;&#x56E0;&#x6B64;&#x8F93;&#x51FA;&#x4E86; 2&#xFF09;&#x3002;&#x8FD9;&#x91CC;&#x7531;&#x4E8E;&#x5E76;&#x6CA1;&#x6709;&#x771F;&#x6B63;&#x5730;&#x9010;&#x884C;&#x8FD0;&#x884C;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6240;&#x4EE5;&#x51FD;&#x6570;&#x7B2C;&#x4E00;&#x884C;&#x7684;&#x6587;&#x672C;&#x8F93;&#x51FA;&#x4EE3;&#x7801;&#x6CA1;&#x6709;&#x8FD0;&#x884C;&#x3002;&#x8BA1;&#x7B97; f(b_array) &#x65F6;&#xFF0C;TensorFlow &#x81EA;&#x52A8;&#x5C06; numpy &#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8F6C;&#x6362;&#x6210;&#x4E86; TensorFlow &#x4E2D;&#x7684;&#x5F20;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;&#x4F9D;&#x7136;&#x80FD;&#x591F;&#x590D;&#x7528;&#x4E4B;&#x524D;&#x5DF2;&#x6784;&#x5EFA;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x3002;</p>
+</li>
+<li><p>&#x4E8C;&#x3001;&#x8BA1;&#x7B97; f(c) &#x65F6;&#xFF0C;&#x867D;&#x7136;&#x5F20;&#x91CF; c &#x7684; shape &#x548C; a &#x3001; b &#x5747;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x7C7B;&#x578B;&#x4E3A; tf.float32 &#xFF0C;&#x56E0;&#x6B64; TensorFlow &#x91CD;&#x65B0;&#x8FD0;&#x884C;&#x4E86;&#x51FD;&#x6570;&#x5185;&#x4EE3;&#x7801;&#xFF08;&#x4ECE;&#x800C;&#x518D;&#x6B21;&#x8F93;&#x51FA;&#x4E86;&#x6587;&#x672C;&#xFF09;&#x5E76;&#x5EFA;&#x7ACB;&#x4E86;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x4E3A; tf.float32 &#x7C7B;&#x578B;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x3002;</p>
+</li>
+<li><p>&#x4E09;&#x3001;&#x8BA1;&#x7B97; f(d) &#x65F6;&#xFF0C;&#x7531;&#x4E8E; d &#x548C; c &#x7684;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#xFF0C;&#x6240;&#x4EE5; TensorFlow &#x590D;&#x7528;&#x4E86;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x540C;&#x7406;&#x6CA1;&#x6709;&#x8F93;&#x51FA;&#x6587;&#x672C;&#x3002;</p>
+</li>
+</ul>
+<h5 id="&#x95EE;&#x9898;&#xFF1A;&#x5982;&#x679C;&#x6253;&#x5370;&#x5B57;&#x7B26;&#x4E32;&#x7684;print&#x66FF;&#x6362;&#x6210;tfprint&#xFF0C;&#x7ED3;&#x679C;&#x4F1A;&#x662F;&#xFF1F;">&#x95EE;&#x9898;&#xFF1A;&#x5982;&#x679C;&#x6253;&#x5370;&#x5B57;&#x7B26;&#x4E32;&#x7684;print()&#x66FF;&#x6362;&#x6210;tf.print()&#xFF0C;&#x7ED3;&#x679C;&#x4F1A;&#x662F;&#xFF1F;</h5>
+<p>&#x6B63;&#x5E38;&#x7684;&#x6309;&#x7167;&#x987A;&#x5E8F;&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-python">The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">1</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">2</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">2</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">0.1</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">0.2</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">1</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">2</span>
+The function <span class="hljs-keyword">is</span> running <span class="hljs-keyword">in</span> Python
+<span class="hljs-number">1</span>
+</code></pre>
+<p>&#x603B;&#x7ED3;&#xFF1A;&#x4E4B;&#x540E;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x5219;&#x663E;&#x793A;&#x51FA; @tf.function &#x5BF9; Python &#x5185;&#x7F6E;&#x7684;&#x6574;&#x6570;&#x548C;&#x6D6E;&#x70B9;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x3002;<strong>&#x53EA;&#x6709;&#x5F53;&#x503C;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x7684;&#x65F6;&#x5019;&#xFF0C; @tf.function &#x624D;&#x4F1A;&#x590D;&#x7528;&#x4E4B;&#x524D;&#x5EFA;&#x7ACB;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x800C;&#x5E76;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5C06; Python &#x5185;&#x7F6E;&#x7684;&#x6574;&#x6570;&#x6216;&#x6D6E;&#x70B9;&#x6570;&#x7B49;&#x8F6C;&#x6362;&#x6210;&#x5F20;&#x91CF;&#x3002;</strong>&#x4E00;&#x822C;&#x800C;&#x8A00;&#xFF0C;&#x5E94;&#x5F53;&#x53EA;&#x5728;&#x6307;&#x5B9A;&#x8D85;&#x53C2;&#x6570;&#x7B49;&#x5C11;&#x6570;&#x573A;&#x5408;&#x4F7F;&#x7528; Python &#x5185;&#x7F6E;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;&#x88AB; @tf.function &#x4FEE;&#x9970;&#x7684;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<h3 id="473-&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684;-tfsession&#xFF08;&#x4E86;&#x89E3;&#xFF09;">4.7.3 &#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684; tf.Session&#xFF08;&#x4E86;&#x89E3;&#xFF09;</h3>
+<p>TensorFlow 2.0 &#x63D0;&#x4F9B;&#x4E86; tf.compat.v1 &#x6A21;&#x5757;&#x4EE5;&#x652F;&#x6301; TensorFlow 1.X &#x7248;&#x672C;&#x7684; API&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x7F16;&#x5199;&#x6A21;&#x578B;&#x7684;&#x65F6;&#x5019;&#x7A0D;&#x52A0;&#x6CE8;&#x610F;&#xFF0C;Keras &#x7684;&#x6A21;&#x578B;&#x662F;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x517C;&#x5BB9; Eager Execution &#x6A21;&#x5F0F;&#x548C; Graph Execution &#x6A21;&#x5F0F;&#x7684;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x4E4B;&#x524D;&#x7684;MLP &#x6216; CNN &#x6A21;&#x578B;&#x53BB;&#x8BAD;&#x7EC3;MNIST&#x6570;&#x636E;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-python">
+optimizer = tf.compat.v1.train.AdamOptimizer(learning_rate=learning_rate)
+num_batches = int(data_loader.num_train_data // batch_size * num_epochs)
+<span class="hljs-comment"># 1&#x3001;&#x5EFA;&#x7ACB;&#x8BA1;&#x7B97;&#x56FE;</span>
+X_placeholder = tf.compat.v1.placeholder(name=<span class="hljs-string">&apos;X&apos;</span>, shape=[<span class="hljs-keyword">None</span>, <span class="hljs-number">28</span>, <span class="hljs-number">28</span>, <span class="hljs-number">1</span>], dtype=tf.float32)
+y_placeholder = tf.compat.v1.placeholder(name=<span class="hljs-string">&apos;y&apos;</span>, shape=[<span class="hljs-keyword">None</span>], dtype=tf.int32)
+y_pred = model(X_placeholder)
+loss = tf.keras.losses.sparse_categorical_crossentropy(y_true=y_placeholder, y_pred=y_pred)
+loss = tf.reduce_mean(loss)
+train_op = optimizer.minimize(loss)
+sparse_categorical_accuracy = tf.keras.metrics.SparseCategoricalAccuracy()
+
+<span class="hljs-comment"># 2&#x3001;&#x5EFA;&#x7ACB;Session&#xFF0C;&#x5E76;&#x8FD0;&#x884C;&#x56FE;&#x8BA1;&#x7B97;</span>
+<span class="hljs-keyword">with</span> tf.compat.v1.Session() <span class="hljs-keyword">as</span> sess:
+  sess.run(tf.compat.v1.global_variables_initializer())
+  <span class="hljs-keyword">for</span> batch_index <span class="hljs-keyword">in</span> range(num_batches):
+    X, y = data_loader.get_batch(batch_size)
+    <span class="hljs-comment"># &#x4F7F;&#x7528;Session.run()&#x5C06;&#x6570;&#x636E;&#x9001;&#x5165;&#x8BA1;&#x7B97;&#x56FE;&#x8282;&#x70B9;&#xFF0C;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x4EE5;&#x53CA;&#x8BA1;&#x7B97;&#x635F;&#x5931;&#x51FD;&#x6570;</span>
+    _, loss_value = sess.run([train_op, loss], feed_dict={X_placeholder: X, y_placeholder: y})
+    print(<span class="hljs-string">&quot;batch %d: loss %f&quot;</span> % (batch_index, loss_value))
+
+    num_batches = int(data_loader.num_test_data // batch_size)
+    <span class="hljs-keyword">for</span> batch_index <span class="hljs-keyword">in</span> range(num_batches):
+      start_index, end_index = batch_index * batch_size, (batch_index + <span class="hljs-number">1</span>) * batch_size
+      y_pred = model.predict(data_loader.test_data[start_index: end_index])
+<span class="hljs-comment"># &#x8FD0;&#x884C;&#x9884;&#x6D4B;&#x7ED3;&#x679C;</span>
+sess.run(sparse_categorical_accuracy.update(y_true=data_loader.test_label[start_index: end_index], y_pred=y_pred))
+      print(<span class="hljs-string">&quot;test accuracy: %f&quot;</span> % sess.run(sparse_categorical_accuracy.result()))
+</code></pre>
+<h3 id="474-&#x603B;&#x7ED3;">4.7.4 &#x603B;&#x7ED3;</h3>
+<ul>
+<li>tf&#x7684;&#x56FE;&#x6267;&#x884C;&#x6A21;&#x5F0F;&#x539F;&#x7406;&#x4E0E;&#x4F1A;&#x8BDD;&#x6A21;&#x5F0F;&#x7684;&#x533A;&#x522B;</li>
+<li>tf.function&#x7684;&#x4F5C;&#x7528;&#x548C;&#x539F;&#x7406;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter4/section6.html" class="navigation navigation-prev " aria-label="Previous page: TensorFlow常用功能模块"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter4/section8.html" class="navigation navigation-next " aria-label="Next page: TensorFlow分布式训练"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters":{},"katex":{},"splitter":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

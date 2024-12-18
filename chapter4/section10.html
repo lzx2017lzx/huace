@@ -1,0 +1,1521 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>综合案例：垃圾分类之训练、推理 | </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-katex/katex.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter4/section11.html" />
+    
+    
+    <link rel="prev" href="../chapter4/section9.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.10"
+        data-chapter-title="综合案例：垃圾分类之训练、推理"
+        data-filepath="chapter4/section10.md"
+        data-basepath=".."
+        data-revision="Sat Apr 10 2021 19:19:20 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        计算机视觉与深度学习课程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1/index.html">
+            
+                
+                    <a href="../chapter1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        计算机视觉简介
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter1/section1.html">
+            
+                
+                    <a href="../chapter1/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        计算机视觉概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1/section2.html">
+            
+                
+                    <a href="../chapter1/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        计算机视觉任务
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2/index.html">
+            
+                
+                    <a href="../chapter2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        图像分类1(Image Classification)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/section1.html">
+            
+                
+                    <a href="../chapter2/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        图像分类介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2/section2.html">
+            
+                
+                    <a href="../chapter2/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        神经网络(NN)简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter2/section3.html">
+            
+                
+                    <a href="../chapter2/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        分类器及损失
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter2/section4.html">
+            
+                
+                    <a href="../chapter2/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        神经网络最优化过程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="chapter2/section5.html">
+            
+                
+                    <a href="../chapter2/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        浅层/深层神经网络
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter3/index.html">
+            
+                
+                    <a href="../chapter3/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        图像分类2(Image Classification)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter3/section1.html">
+            
+                
+                    <a href="../chapter3/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        深度学习优化算法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter3/section2.html">
+            
+                
+                    <a href="../chapter3/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        深度学习正则化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter3/section3.html">
+            
+                
+                    <a href="../chapter3/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        卷积神经网络(CNN)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter3/section4.html">
+            
+                
+                    <a href="../chapter3/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        CNN架构
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4/index.html">
+            
+                
+                    <a href="../chapter4/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        深入浅出Tensorflow
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter4/section1.html">
+            
+                
+                    <a href="../chapter4/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter4/section2.html">
+            
+                
+                    <a href="../chapter4/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter4/section3.html">
+            
+                
+                    <a href="../chapter4/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        快速入门模型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="chapter4/section4.html">
+            
+                
+                    <a href="../chapter4/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        TF搭建CNN分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="chapter4/section5.html">
+            
+                
+                    <a href="../chapter4/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Keras Pipline与自定义模型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="chapter4/section6.html">
+            
+                
+                    <a href="../chapter4/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        TensorFlow常用功能模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="chapter4/section7.html">
+            
+                
+                    <a href="../chapter4/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        TensorFlow执行模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="chapter4/section8.html">
+            
+                
+                    <a href="../chapter4/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        TensorFlow分布式训练
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="chapter4/section9.html">
+            
+                
+                    <a href="../chapter4/section9.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        综合案例：垃圾分类之模型构建
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.10" data-path="chapter4/section10.html">
+            
+                
+                    <a href="../chapter4/section10.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.</b>
+                        
+                        综合案例：垃圾分类之训练、推理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="chapter4/section11.html">
+            
+                
+                    <a href="../chapter4/section11.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.11.</b>
+                        
+                        综合案例：模型导出与部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5/index.html">
+            
+                
+                    <a href="../chapter5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        目标检测(Object Detection)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="chapter5/section1.html">
+            
+                
+                    <a href="../chapter5/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        目标检测概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="chapter5/section2.html">
+            
+                
+                    <a href="../chapter5/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        R-CNN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="chapter5/section3.html">
+            
+                
+                    <a href="../chapter5/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        SPPNet
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="chapter5/section4.html">
+            
+                
+                    <a href="../chapter5/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Fast R-CNN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="chapter5/section5.html">
+            
+                
+                    <a href="../chapter5/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Faster R-CNN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="chapter5/section6.html">
+            
+                
+                    <a href="../chapter5/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Faster RCNN接口分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="chapter5/section7.html">
+            
+                
+                    <a href="../chapter5/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        YOLO算法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="chapter5/section8.html">
+            
+                
+                    <a href="../chapter5/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        YOLOV2&amp;V3
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="chapter5/section9.html">
+            
+                
+                    <a href="../chapter5/section9.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        SSD算法原理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="chapter5/section10.html">
+            
+                
+                    <a href="../chapter5/section10.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        案例：KITTI人、车检测案例-数据集处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="chapter5/section11.html">
+            
+                
+                    <a href="../chapter5/section11.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.11.</b>
+                        
+                        案例：KITTI人、车检测案例-训练、检测
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter6/index.html">
+            
+                
+                    <a href="../chapter6/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        目标分割(Object Segmentation)
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="chapter6/section1.html">
+            
+                
+                    <a href="../chapter6/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        目标分割介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="chapter6/section2.html">
+            
+                
+                    <a href="../chapter6/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        FCN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="chapter6/section3.html">
+            
+                
+                    <a href="../chapter6/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        SegNet与U-Net
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="chapter6/section4.html">
+            
+                
+                    <a href="../chapter6/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        DeepLab系列
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="chapter6/section5.html">
+            
+                
+                    <a href="../chapter6/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        DeepLab V2 &amp; V3&amp; V3+
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="chapter6/section6.html">
+            
+                
+                    <a href="../chapter6/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        Mask RCNN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="chapter6/section7.html">
+            
+                
+                    <a href="../chapter6/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        Mask RCNN分割案例1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="chapter6/section8.html">
+            
+                
+                    <a href="../chapter6/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        Mask RCNN分割案例2
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="chapter7/index.html">
+            
+                
+                    <a href="../chapter7/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        视频跟踪任务
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="chapter7/section1.html">
+            
+                
+                    <a href="../chapter7/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        目标追踪(Object Tracking)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="chapter7/section2.html">
+            
+                
+                    <a href="../chapter7/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        FCNT
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="chapter7/section3.html">
+            
+                
+                    <a href="../chapter7/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        GOTURN
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="chapter7/section4.html">
+            
+                
+                    <a href="../chapter7/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        SiamFC
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" ></a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="410-&#x7EFC;&#x5408;&#x6848;&#x4F8B;&#xFF1A;&#x5783;&#x573E;&#x5206;&#x7C7B;&#x4E4B;&#x6A21;&#x578B;&#x6784;&#x5EFA;&#x4E0E;&#x8BAD;&#x7EC3;">4.10 &#x7EFC;&#x5408;&#x6848;&#x4F8B;&#xFF1A;&#x5783;&#x573E;&#x5206;&#x7C7B;&#x4E4B;&#x6A21;&#x578B;&#x6784;&#x5EFA;&#x4E0E;&#x8BAD;&#x7EC3;</h1>
+<h2 id="&#x5B66;&#x4E60;&#x76EE;&#x6807;">&#x5B66;&#x4E60;&#x76EE;&#x6807;</h2>
+<ul>
+<li>&#x76EE;&#x6807;<ul>
+<li>&#x638C;&#x63E1;EfficientNet&#x6A21;&#x578B;&#x539F;&#x7406;</li>
+<li>&#x638C;&#x63E1;warmup&#x4EE5;&#x53CA;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x539F;&#x7406;</li>
+</ul>
+</li>
+<li>&#x5E94;&#x7528;<ul>
+<li>&#x5E94;&#x7528;&#x5B8C;&#x6210;&#x5783;&#x573E;&#x5206;&#x7C7B;&#x7684;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;</li>
+<li>&#x5E94;&#x7528;&#x5B8C;&#x6210;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x4E0E;warmup&#x7684;&#x5B9E;&#x73B0;</li>
+</ul>
+</li>
+</ul>
+<h3 id="4101-efficientnet&#x6A21;&#x578B;&#x4ECB;&#x7ECD;">4.10.1 EfficientNet&#x6A21;&#x578B;&#x4ECB;&#x7ECD;</h3>
+<p>&#x5148;&#x518D;&#x6765;&#x770B;&#x4E00;&#x904D;efficientnet&#x7684;&#x53D6;&#x5F97;&#x7684;&#x6210;&#x7EE9;</p>
+<p><img src="../images/efficientnet&#x6548;&#x679C;&#x5BF9;&#x6BD4;.jpg" alt=""></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA; EfficientNet &#x7CFB;&#x5217;&#x5B8C;&#x80DC;&#x4E86;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x7684;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#x3002;&#x5176;&#x4E2D;EfficientNet-B7&#x5B9E;&#x73B0;&#x4E86;ImageNet&#x7684;state-of-the-art&#x7387;&#xFF0C;&#x8FBE;&#x5230;&#x4E86; 84.4%&#x3002;&#x4F46;&#x662F;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x91CF;&#x76F8;&#x6BD4; GPipe &#x51CF;&#x5C11;&#x4E86; 8.4 &#x500D;&#xFF0C;&#x5E76;&#x4E14;&#x63A8;&#x7406;&#x901F;&#x5EA6;&#x8FBE;&#x5230;&#x4E86; GPipe &#x7684; 6.1 &#x500D;&#x3002;&#x66F4;&#x52A0;&#x7EC6;&#x8282;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x540E;&#x9762;&#x7684;&#x5B9E;&#x9A8C;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x8BBA;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="https://arxiv.org/pdf/1905.11946.pdf" target="_blank">https://arxiv.org/pdf/1905.11946.pdf</a></p>
+<h4 id="41011-&#x6458;&#x8981;">4.10.1.1 &#x6458;&#x8981;</h4>
+<p>&#x4F5C;&#x8005;&#x7CFB;&#x7EDF;&#x5730;&#x7814;&#x7A76;&#x4E86;&#x6A21;&#x578B;&#x7F29;&#x653E;&#x5E76;&#x4E14;&#x4ED4;&#x7EC6;&#x9A8C;&#x8BC1;&#x4E86;<strong>&#x7F51;&#x7EDC;&#x6DF1;&#x5EA6;&#x3001;&#x5BBD;&#x5EA6;&#x548C;&#x5206;&#x8FA8;&#x7387;&#x4E4B;&#x95F4;&#x7684;&#x5E73;&#x8861;&#x53EF;&#x4EE5;&#x5BFC;&#x81F4;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#x8868;&#x73B0;</strong>&#x3002;&#x63D0;&#x51FA;&#x4E86;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x7F29;&#x653E;&#x65B9;&#x6CD5;&#x2014;&#x2014;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x9AD8;&#x6548;&#x7684;&#x590D;&#x5408;&#x7CFB;&#x6570;&#x6765;&#x5B8C;&#x6210;&#x5BF9;&#x6DF1;&#x5EA6;/&#x5BBD;&#x5EA6;/&#x5206;&#x8FA8;&#x7387;&#x6240;&#x6709;&#x7EF4;&#x5EA6;&#x7684;&#x7EDF;&#x4E00;&#x7F29;&#x653E;&#x3002;&#x5728;MobileNets&#x548C;ResNet&#x4E0A;&#x5C55;&#x793A;&#x4E86;&#x8FD9;&#x79CD;&#x7F29;&#x653E;&#x65B9;&#x6CD5;&#x7684;&#x9AD8;&#x6548;&#x6027;&#x3002;&#x4E3A;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x7814;&#x7A76;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x795E;&#x7ECF;&#x67B6;&#x6784;&#x641C;&#x7D22;&#x8BBE;&#x8BA1;&#x4E86;&#x4E00;&#x4E2A;baseline&#x7F51;&#x7EDC;&#x3002;<strong>&#x4F7F;&#x7528;&#x795E;&#x7ECF;&#x67B6;&#x6784;&#x641C;&#x7D22;&#x6765;&#x8BBE;&#x8BA1;&#x65B0;&#x7684;baseline&#x5E76;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x4EE5;&#x83B7;&#x5F97;&#x4E00;&#x7CFB;&#x5217;&#x6A21;&#x578B;&#xFF0C;&#x79F0;EfficientNets&#x3002;</strong></p>
+<p>&#x5F15;&#x5165;&#xFF1A;</p>
+<p><strong>&#x4E00;&#x822C;ConvNets&#x7684;&#x7CBE;&#x5EA6;&#x968F;&#x7740;&#x5B83;&#x7684;size&#x589E;&#x52A0;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x5DE5;&#x4F5C;&#x901A;&#x8FC7;&#x589E;&#x52A0;ConvNets&#x7684;&#x5BBD;&#x5EA6;&#x3001;&#x6DF1;&#x5EA6;&#x6216;&#x8005;&#x56FE;&#x50CF;&#x5206;&#x8FA8;&#x7387;&#x53BB;&#x63D0;&#x5347;&#x7F51;&#x7EDC;&#x7684;&#x6027;&#x80FD;&#x3002;&#x5C3D;&#x7BA1;&#x53EF;&#x4EE5;&#x4EFB;&#x610F;&#x7F29;&#x653E;&#x4E8C;&#x7EF4;&#x6216;&#x4E09;&#x7EF4;&#xFF0C;&#x4F46;&#x4EFB;&#x610F;&#x7F29;&#x653E;&#x9700;&#x8981;&#x7E41;&#x7410;&#x7684;&#x624B;&#x52A8;&#x8C03;&#x6574;&#xFF0C;&#x5E76;&#x4E14;&#x4ECD;&#x7136;&#x7ECF;&#x5E38;&#x4EA7;&#x751F;&#x6B21;&#x4F18;&#x7684;&#x7CBE;&#x5EA6;&#x548C;&#x6548;&#x7387;&#x3002;</strong></p>
+<p>&#x4F5C;&#x8005;&#x91CD;&#x65B0;&#x601D;&#x8003;&#x548C;&#x7814;&#x7A76;&#x4E86;ConvNets&#x7684;&#x7F29;&#x653E;&#x95EE;&#x9898;&#xFF0C;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E00;&#x79CD;&#x539F;&#x5219;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#x7F29;&#x653E;ConvNets&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x66F4;&#x9AD8;&#x7684;&#x7CBE;&#x5EA6;&#x548C;&#x6548;&#x7387;&#xFF1F;&#x4F5C;&#x8005;&#x7684;&#x5B9E;&#x8BC1;&#x7814;&#x7A76;&#x8868;&#x660E;&#xFF0C;&#x5E73;&#x8861;&#x7F51;&#x7EDC;&#x5BBD;&#x5EA6;/&#x6DF1;&#x5EA6;/&#x5206;&#x8FA8;&#x7387;&#x7684;&#x6240;&#x6709;&#x7EF4;&#x5EA6;&#x662F;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x4E14;&#x53EF;&#x901A;&#x8FC7;&#x7B80;&#x5355;&#x5730;&#x6309;&#x6BD4;&#x4F8B;&#x7F29;&#x653E;&#x6BCF;&#x4E2A;&#x7EF4;&#x5EA6;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x79CD;&#x5E73;&#x8861;&#x3002;&#x57FA;&#x4E8E;&#x6B64;&#xFF0C;&#x63D0;&#x51FA;&#x4E86;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x800C;&#x6709;&#x6548;&#x7684;&#x590D;&#x5408;&#x7F29;&#x653E;&#x65B9;&#x6CD5;&#x3002;</p>
+<h4 id="41012-&#x539F;&#x7406;&#x4ECB;&#x7ECD;">4.10.1.2 &#x539F;&#x7406;&#x4ECB;&#x7ECD;</h4>
+<p><img src="../images/efficientnetscaleing.jpg" style="zoom:50%;"></p>
+<ul>
+<li><p>&#x8FD9;&#x79CD;&#x590D;&#x5408;&#x7F29;&#x653E;&#x65B9;&#x6CD5;&#x662F;&#x6709;&#x610F;&#x4E49;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5982;&#x679C;&#x8F93;&#x5165;&#x56FE;&#x50CF;&#x66F4;&#x5927;&#xFF0C;&#x5219;&#x7F51;&#x7EDC;&#x9700;&#x8981;&#x66F4;&#x591A;&#x5C42;&#x6765;&#x589E;&#x52A0;&#x611F;&#x77E5;&#x573A;&#xFF0C;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x66F4;&#x591A;&#x901A;&#x9053;&#x6765;&#x6355;&#x83B7;&#x66F4;&#x5927;&#x56FE;&#x50CF;&#x4E0A;&#x7684;&#x66F4;&#x7EC6;&#x7C92;&#x5EA6;&#x56FE;&#x6848;&#x3002;</p>
+</li>
+<li><p>&#x6DF1;&#x5EA6;(<img src="https://www.zhihu.com/equation?tex=d" alt="[&#x516C;&#x5F0F;]"> )&#xFF1A; &#x66F4;&#x6DF1;&#x7684;&#x7F51;&#x7EDC;&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x66F4;&#x4E30;&#x5BCC;&#x3001;&#x66F4;&#x590D;&#x6742;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x5730;&#x6CDB;&#x5316;&#x65B0;&#x4EFB;&#x52A1;&#x3002; &#x7136;&#x800C;&#x7531;&#x4E8E;&#x68AF;&#x5EA6;&#x6D88;&#x5931;&#x95EE;&#x9898;&#xFF0C;&#x66F4;&#x6DF1;&#x5C42;&#x6B21;&#x7684;&#x7F51;&#x7EDC;&#x4E5F;&#x66F4;&#x96BE;&#x8BAD;&#x7EC3;&#x3002;&#x867D;&#x7136;&#x8DF3;&#x5C42;&#x8FDE;&#x63A5;&#x548C;&#x6279;&#x91CF;&#x5F52;&#x4E00;&#x5316;&#x7B49;&#x53EF;&#x4EE5;&#x7F13;&#x89E3;&#x8BAD;&#x7EC3;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x975E;&#x5E38;&#x6DF1;&#x7684;&#x7F51;&#x7EDC;&#x7684;&#x51C6;&#x786E;&#x5EA6;&#x589E;&#x76CA;&#x4F1A;&#x51CF;&#x5C11;&#xFF1A;&#x4F8B;&#x5982;&#xFF0C;ResNet-1000&#x548C;ResNet-101&#x6709;&#x76F8;&#x4F3C;&#x7CBE;&#x5EA6;&#x3002;</p>
+</li>
+<li>&#x5BBD;&#x5EA6;( <img src="https://www.zhihu.com/equation?tex=w" alt="[&#x516C;&#x5F0F;]"> )&#xFF1A;&#x66F4;&#x5BBD;&#x7684;&#x7F51;&#x7EDC;&#x5F80;&#x5F80;&#x80FD;&#x591F;&#x6355;&#x83B7;&#x66F4;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x5E76;&#x4E14;&#x66F4;&#x5BB9;&#x6613;&#x8BAD;&#x7EC3;&#x3002; &#x7136;&#x800C;&#xFF0C;&#x6781;&#x5BBD;&#x4F46;&#x6D45;&#x7684;&#x7F51;&#x7EDC;&#x5F80;&#x5F80;&#x96BE;&#x4EE5;&#x6355;&#x83B7;&#x66F4;&#x9AD8;&#x7EA7;&#x522B;&#x7684;&#x7279;&#x5F81;&#x3002;</li>
+<li>&#x5206;&#x8FA8;&#x7387;( <img src="https://www.zhihu.com/equation?tex=r" alt="[&#x516C;&#x5F0F;]"> )&#xFF1A;&#x4F7F;&#x7528;&#x66F4;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#x7684;&#x8F93;&#x5165;&#x56FE;&#x50CF;&#xFF0C;&#x7F51;&#x7EDC;&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x66F4;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x7279;&#x5F81;&#x3002;</li>
+</ul>
+<h5 id="1&#x3001;&#x590D;&#x5408;&#x6A21;&#x578B;&#x7F29;&#x653E;&#x95EE;&#x9898;&#x5EFA;&#x6A21;">1&#x3001;&#x590D;&#x5408;&#x6A21;&#x578B;&#x7F29;&#x653E;-&#x95EE;&#x9898;&#x5EFA;&#x6A21;</h5>
+<p>&#x5BF9;&#x4E8E;ConvNet&#xFF08;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#xFF09;&#x7684;&#x7B2C; <img src="https://www.zhihu.com/equation?tex=i" alt="[&#x516C;&#x5F0F;]"> &#x5C42;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF1A; <img src="https://www.zhihu.com/equation?tex=Y_%7Bi%7D+%3D+F_%7Bi%7D%28+X_%7Bi%7D%29" alt="[&#x516C;&#x5F0F;]">&#x3002;&#x6A21;&#x578B;&#x7F29;&#x653E;&#x8DDF;ConvNet&#x8BBE;&#x8BA1;&#x53BB;&#x5BFB;&#x627E;&#x6700;&#x4F18;&#x7ED3;&#x6784;<img src="https://www.zhihu.com/equation?tex=+F_%7Bi%7D" alt="[&#x516C;&#x5F0F;]">&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6A21;&#x578B;&#x7F29;&#x653E;&#x662F;&#x53BB;&#x5BFB;&#x627E;<img src="https://www.zhihu.com/equation?tex=+F_%7Bi%7D" alt="[&#x516C;&#x5F0F;]">&#x7684;&#x6700;&#x4F73;&#x5BBD;&#x5EA6; <img src="https://www.zhihu.com/equation?tex=%28C_%7Bi%7D+%29" alt="[&#x516C;&#x5F0F;]"> &#x3001;&#x957F;&#x5EA6; <img src="https://www.zhihu.com/equation?tex=%28L_%7Bi%7D+%29" alt="[&#x516C;&#x5F0F;]"> &#x548C;&#x5206;&#x8FA8;&#x7387; <img src="https://www.zhihu.com/equation?tex=%28H_%7Bi%7D+%2CW_%7Bi%7D%29" alt="[&#x516C;&#x5F0F;]"> &#xFF0C;&#x901A;&#x8FC7;&#x56FA;&#x5B9A;&#x4F4F;<img src="https://www.zhihu.com/equation?tex=+F_%7Bi%7D" alt="[&#x516C;&#x5F0F;]">&#xFF0C;&#x6A21;&#x578B;&#x7F29;&#x653E;&#x7B80;&#x5316;&#x4E86;&#x8D44;&#x6E90;&#x9650;&#x5236;&#x95EE;&#x9898;&#x3002;&#x5728;&#x7ED9;&#x5B9A;&#x8D44;&#x6E90;&#x9650;&#x5236;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53BB;&#x6700;&#x5927;&#x5316;&#x6A21;&#x578B;&#x7684;&#x7CBE;&#x5EA6;&#xFF0C;&#x5C31;&#x53D8;&#x6210;&#x4E86;&#x4EE5;&#x4E0B;&#x4F18;&#x5316;&#x95EE;&#x9898;&#xFF1A;</p>
+<p><img src="../images/effi&#x4F18;&#x5316;.jpg" style="zoom:50%;"></p>
+<ul>
+<li>1&#x3001;&#x6700;&#x4E0A;&#x65B9;&#x4E3A;&#x8981;&#x4F18;&#x5316;&#x7684;&#x51C6;&#x786E;&#x7387;</li>
+<li>2&#x3001;&#x4E2D;&#x95F4;N&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x5377;&#x79EF;&#x7F51;&#x7EDC;<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>F</mi><mrow><mi>i</mi></mrow><mrow><mi>L</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">F_{i}^{L}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8413309999999999em;"></span><span class="strut bottom" style="height:1.0999949999999998em;vertical-align:-0.258664em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist"><span style="top:0.258664em;margin-left:-0.13889em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight">L</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>&#x8868;&#x793A;&#x67D0;layerF&#x88AB;&#x91CD;&#x590D;&#x4E86;L&#x6B21;&#x5728;&#x5377;&#x79EF;&#x7ED3;&#x6784;&#x5C42;i&#x4E2D;&#xFF08;&#x53EF;&#x4EE5;&#x7406;&#x89E3;Resnet&#x67D0;&#x4E2A;&#x7ED3;&#x6784;&#x91CD;&#x590D;&#x82E5;&#x5E72;&#x6B21;&#xFF09;</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07847em;">X</span></span></span></span>&#x4E3A;&#x67D0;i&#x5C42;&#x7684;&#x8F93;&#x5165;&#x5206;&#x522B;&#x4E3A;H&#xFF0C;W&#xFF0C;C</li>
+</ul>
+</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x4E24;&#x5F20;&#x56FE;&#x8868;&#x793A;&#x6BCF;&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x5F71;&#x54CD;&#x548C;&#x4E09;&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x6BD4;&#x7387;&#x8C03;&#x6574;&#x7684;&#x5F71;&#x54CD;</p>
+<p><img src="../images/&#x6BCF;&#x4E2A;&#x7EF4;&#x5EA6;&#x7684;&#x5F71;&#x54CD;.jpg" style="zoom:50%;"></p>
+<p><img src="../images/&#x4E09;&#x4E2A;&#x7EF4;&#x5EA6;&#x6BD4;&#x7387;.jpg" style="zoom:50%;"></p>
+<p>&#x8868;&#x793A;&#x6BD4;&#x8F83;&#x4E86;&#x4E0D;&#x540C;&#x7F51;&#x7EDC;&#x6DF1;&#x5EA6;&#x548C;&#x5206;&#x8FA8;&#x7387;&#x4E0B;&#x7684;&#x5BBD;&#x5EA6;&#x7F29;&#x653E;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;&#x5728;&#x4E0D;&#x6539;&#x53D8;&#x6DF1;&#x5EA6;&#xFF08;d = 1.0&#xFF09;&#x548C;&#x5206;&#x8FA8;&#x7387;&#xFF08;r = 1.0&#xFF09;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x7F29;&#x653E;&#x7F51;&#x7EDC;&#x5BBD;&#x5EA6;w&#xFF0C;&#x5219;&#x7CBE;&#x5EA6;&#x4F1A;&#x5F88;&#x5FEB;&#x8FBE;&#x5230;&#x9971;&#x548C;&#x3002; &#x968F;&#x7740;&#x66F4;&#x6DF1;&#xFF08;d = 2.0&#xFF09;&#x548C;&#x66F4;&#x9AD8;&#x5206;&#x8FA8;&#x7387;&#xFF08;r = 2.0&#xFF09;&#xFF0C;&#x5BBD;&#x5EA6;&#x7F29;&#x653E;&#x5728;&#x76F8;&#x540C;&#x7684;FLOPS&#x6210;&#x672C;&#x4E0B;&#x5B9E;&#x73B0;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x7CBE;&#x5EA6;&#x3002;</p>
+<h5 id="2&#x3001;&#x65B0;&#x7684;&#x590D;&#x5408;&#x65B9;&#x6CD5;">2&#x3001;&#x65B0;&#x7684;&#x590D;&#x5408;&#x65B9;&#x6CD5;</h5>
+<p>&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x590D;&#x5408;&#x7CFB;&#x6570; <img src="https://www.zhihu.com/equation?tex=%5Cphi" alt="[&#x516C;&#x5F0F;]"> &#x4EE5;&#x539F;&#x5219;&#x65B9;&#x5F0F;&#x7EDF;&#x4E00;&#x7F29;&#x653E;&#x7F51;&#x7EDC;&#x5BBD;&#x5EA6;&#x3001;&#x6DF1;&#x5EA6;&#x548C;&#x5206;&#x8FA8;&#x7387;</p>
+<p><img src="../images/&#x65B0;&#x590D;&#x5408;&#x65B9;&#x6CD5;.jpg" style="zoom:50%;"></p>
+<p>&#x5176;&#x4E2D; <img src="https://www.zhihu.com/equation?tex=%5Calpha%EF%BC%8C%5Cbeta%EF%BC%8C%5Cgamma" alt="[&#x516C;&#x5F0F;]"> &#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C0F;&#x7F51;&#x683C;&#x641C;&#x7D22;&#x786E;&#x5B9A;&#x7684;&#x5E38;&#x6570;&#x3002; <img src="https://www.zhihu.com/equation?tex=%5Cphi" alt="[&#x516C;&#x5F0F;]">&#x662F;&#x7528;&#x6237;&#x6307;&#x5B9A;&#x7684;&#x7CFB;&#x6570;&#xFF0C;&#x63A7;&#x5236;&#x6709;&#x591A;&#x5C11;&#x8D44;&#x6E90;&#x53EF;&#x7528;&#x4E8E;&#x6A21;&#x578B;&#x7F29;&#x653E;&#xFF0C;&#x800C;<img src="https://www.zhihu.com/equation?tex=%5Calpha%EF%BC%8C%5Cbeta%EF%BC%8C%5Cgamma" alt="[&#x516C;&#x5F0F;]">&#x6307;&#x5B9A;&#x5982;&#x4F55;&#x5C06;&#x8FD9;&#x4E9B;&#x989D;&#x5916;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x7ED9;&#x7F51;&#x7EDC;&#x5BBD;&#x5EA6;&#xFF0C;&#x6DF1;&#x5EA6;&#x548C;&#x5206;&#x8FA8;&#x7387;&#x3002;&#x5728;&#x672C;&#x6587;&#x4E2D;&#xFF0C;&#x4F5C;&#x8005;&#x7EA6;&#x675F; <img src="https://www.zhihu.com/equation?tex=%5Calpha%2C%5Cbeta%5E%7B2%7D%2C%5Cgamma%5E%7B2%7D%5Capprox2" alt="[&#x516C;&#x5F0F;]"> &#xFF0C;&#x4F7F;&#x5F97;&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;&#x65B0;&#x7684; <img src="https://www.zhihu.com/equation?tex=%5Cphi" alt="[&#x516C;&#x5F0F;]"> &#xFF0C;&#x603B;FLOPS&#x5C06;&#x5927;&#x7EA6;&#x589E;&#x52A0; <img src="https://www.zhihu.com/equation?tex=2%5E%7B%5Cphi%7D" alt="[&#x516C;&#x5F0F;]"> &#x3002;</p>
+<blockquote>
+<p>&#x62D3;&#x5C55;&#xFF1A;&#x5E38;&#x89C4;&#x5377;&#x79EF;&#x8FD0;&#x7B97;&#x7684;FLOPS&#x4E0E; <img src="https://www.zhihu.com/equation?tex=d%2Cw%5E%7B2%7D%2Cr%5E%7B2%7D" alt="[&#x516C;&#x5F0F;]"> &#x6210;&#x6B63;&#x6BD4;&#xFF0C;&#x5373;&#x53CC;&#x500D;&#x7F51;&#x7EDC;&#x6DF1;&#x5EA6;&#x5C06;&#x4F7F;FLOPS&#x52A0;&#x500D;&#x3002;&#x4F46;&#x7F51;&#x7EDC;&#x5BBD;&#x5EA6;&#x6216;&#x5206;&#x8FA8;&#x7387;&#x52A0;&#x500D;&#x4F1A;&#x4F7F;FLOPS&#x589E;&#x52A0;&#x56DB;&#x500D;&#x3002;</p>
+</blockquote>
+<h4 id="41013-efficientnet-&#x67B6;&#x6784;">4.10.1.3 Efficientnet &#x67B6;&#x6784;</h4>
+<p>&#x6240;&#x4EE5;&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F5C;&#x8005;&#x627E;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;baseline&#xFF08;&#xFF08;MBConv&#xFF09;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;MobileNetV2&#x548C;MnasNet&#xFF09;&#x6765;&#x8BC4;&#x4F30;&#xFF0C;&#x79F0;&#x4E3A;EfficientNet-B0&#x3002;</p>
+<p><img src="../images/B0&#x67B6;&#x6784;.jpg" style="zoom:50%;"></p>
+<ul>
+<li>&#x6B65;&#x9AA4;1&#xFF1A;&#x9996;&#x5148;&#x786E;&#x5B9A;&#x3C6;= 1&#xFF0C;&#x5047;&#x8BBE;&#x6709;&#x4E24;&#x500D;&#x7684;&#x53EF;&#x7528;&#x8D44;&#x6E90;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x516C;&#x5F0F;2&#x548C;3&#x8FDB;&#x884C; <img src="https://www.zhihu.com/equation?tex=%5Calpha%EF%BC%8C%5Cbeta%EF%BC%8C%5Cgamma" alt="[&#x516C;&#x5F0F;]"> &#x7684;&#x5C0F;&#x7F51;&#x683C;&#x641C;&#x7D22;&#x3002;&#x4F5C;&#x8005;&#x627E;&#x5230;&#x4E86;EfficientNet-B0&#x6EE1;&#x8DB3;&#x7EA6;&#x675F;&#x7684;&#x6700;&#x4F73;&#x503C; <img src="https://www.zhihu.com/equation?tex=%CE%B1%3D+1.2%EF%BC%8C%CE%B2%3D+1.1%EF%BC%8C%CE%B3%3D+1.15" alt="[&#x516C;&#x5F0F;]"> </li>
+<li>&#x6B65;&#x9AA4;2&#xFF1A;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C06; <img src="https://www.zhihu.com/equation?tex=%CE%B1%EF%BC%8C%CE%B2%EF%BC%8C%CE%B3" alt="[&#x516C;&#x5F0F;]"> &#x56FA;&#x5B9A;&#x4E3A;&#x5E38;&#x6570;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x516C;&#x5F0F;3&#x6269;&#x5C55;&#x5177;&#x6709;&#x4E0D;&#x540C; <img src="https://www.zhihu.com/equation?tex=%5Cphi" alt="[&#x516C;&#x5F0F;]"> &#x7684;&#x57FA;&#x7EBF;&#x7F51;&#x7EDC;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;EfficientNet-B1&#x81F3;B7&#xFF08;<strong>&#x4E5F;&#x5C31;&#x662F;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x7B97;&#x8D44;&#x6E90;&#x6765;&#x9009;&#x62E9;&#x5408;&#x9002;&#x5927;&#x5C0F;&#x7684;&#x7F51;&#x7EDC;</strong>&#xFF09;&#xFF0C;&#x7EC6;&#x8282;&#x5982;&#x4E0B;</li>
+</ul>
+<p><img src="../images/&#x8D44;&#x6E90;&#x5927;&#x5C0F;.jpg" alt=""></p>
+<h4 id="41014-&#x5B9E;&#x9A8C;">4.10.1.4 &#x5B9E;&#x9A8C;</h4>
+<ul>
+<li>&#x5BF9;MobileNets &#x548C; ResNets&#x8FDB;&#x884C;&#x7F29;&#x653E;</li>
+</ul>
+<p><img src="../images/&#x5176;&#x4ED6;&#x6A21;&#x578B;&#x7F29;&#x653E;.jpg" style="zoom:50%;"></p>
+<p>&#x8FD9;&#x4E2A;&#x590D;&#x5408;&#x7F29;&#x653E;&#x65B9;&#x6CD5;&#x63D0;&#x9AD8;&#x4E86;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x6A21;&#x578B;&#x7684;&#x51C6;&#x786E;&#x6027;&#xFF0C;&#x8868;&#x660E;&#x4E86;&#x7F29;&#x653E;&#x65B9;&#x6CD5;&#x5BF9;&#x73B0;&#x6709;&#x7684;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x6709;&#x6548;&#x6027;&#x3002;</p>
+<ul>
+<li>&#x7C7B;&#x6FC0;&#x6D3B;&#x56FE;&#x8BF4;&#x660E;&#x4E86;&#x5177;&#x6709;&#x590D;&#x5408;&#x7F29;&#x653E;&#x7684;&#x6A21;&#x578B;&#x503E;&#x5411;&#x4E8E;&#x5173;&#x6CE8;&#x5177;&#x6709;&#x66F4;&#x591A;&#x5BF9;&#x8C61;&#x7EC6;&#x8282;&#x7684;&#x66F4;&#x76F8;&#x5173;&#x533A;&#x57DF;&#xFF0C;&#x800C;&#x5176;&#x4ED6;&#x6A21;&#x578B;&#x8981;&#x4E48;&#x7F3A;&#x5C11;&#x5BF9;&#x8C61;&#x7EC6;&#x8282;&#xFF0C;&#x8981;&#x4E48;&#x65E0;&#x6CD5;&#x6355;&#x83B7;&#x56FE;&#x50CF;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<p><img src="../images/&#x7C7B;&#x6FC0;&#x6D3B;&#x56FE;.jpg" style="zoom:50%;"></p>
+<ul>
+<li>&#x5728;&#x5404;&#x6BD4;&#x8D5B;&#x4E2D;&#x505A;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x5F97;&#x6210;&#x5C31;</li>
+</ul>
+<p><img src="../images/&#x6A21;&#x578B;&#x8FC1;&#x79FB;&#x6BD4;&#x8F83;.jpg" alt=""></p>
+<ul>
+<li>&#x4E0E;&#x516C;&#x5F00;&#x53EF;&#x7528;&#x6A21;&#x578B;&#x76F8;&#x6BD4;&#xFF0C;EfficientNet&#x6A21;&#x578B;&#x51CF;&#x5C11;&#x4E86;&#x5E73;&#x5747;4.7&#x500D;&#xFF08;&#x6700;&#x591A;21&#x500D;&#xFF09;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x4E86;&#x66F4;&#x9AD8;&#x7684;&#x7CBE;&#x5EA6;&#x3002;</li>
+<li>&#x4E0E;&#x6700;&#x5148;&#x8FDB;&#x7684;&#x6A21;&#x578B;&#x76F8;&#x6BD4;&#xFF0C;EfficientNet&#x6A21;&#x578B;&#x5728;8&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x6709;5&#x4E2A;&#x4ECD;&#x7136;&#x8D85;&#x8FC7;&#x4E86;&#x5B83;&#x4EEC;&#x7684;&#x51C6;&#x786E;&#x5EA6;&#xFF0C;&#x4E14;&#x4F7F;&#x7528;&#x7684;&#x53C2;&#x6570;&#x51CF;&#x5C11;&#x4E86;9.6&#x500D;&#x3002;</li>
+</ul>
+<p>&#x6700;&#x7EC8;&#x5404;&#x79CD;&#x6A21;&#x578B;&#x7684;&#x7CBE;&#x5EA6; - &#x53C2;&#x6570;&#x66F2;&#x7EBF;&#xFF0C;&#x7EA2;&#x8272;&#x4E3A;EfficientNet&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x660E;&#x663E;&#x6BD4;&#x5404;&#x4E2A;&#x6A21;&#x578B;&#x7CBE;&#x5EA6;&#x9AD8;&#xFF0C;&#x53C2;&#x6570;&#x91CF;&#x5C11;&#x3002;</p>
+<p><img src="../images/effi&#x6A21;&#x578B;&#x7CBE;&#x5EA6;&#x6BD4;&#x8F83;.jpg" style="zoom:50%;"></p>
+<p>&#x6CE8;&#xFF1A;&#x6700;&#x7EC8;&#x7684;&#x6548;&#x679C;&#x6BD4;&#x7387;&#xFF0C;&#x90FD;&#x662F;&#x5728;&#x5927;&#x91CF;&#x7684;&#x8BBE;&#x5907;&#x548C;&#x6A21;&#x578B;&#x4E0A;&#x8BA1;&#x7B97;&#x5F97;&#x6765;&#x7684;&#xFF0C;&#x8D44;&#x6E90;&#x6D88;&#x8017;&#x4E0D;&#x53EF;&#x60F3;&#x8C61;&#x3002;Google&#x6709;&#x8DB3;&#x591F;&#x7684;&#x8D44;&#x6E90;&#x548C;&#x8BBE;&#x5907;&#xFF08;TPU&#xFF09;&#x53BB;&#x505A;&#x3002;</p>
+<h3 id="4102-&#x5783;&#x573E;&#x5206;&#x7C7B;&#x5F00;&#x6E90;efficientnet&#x5B9E;&#x73B0;&#x4ECB;&#x7ECD;">4.10.2 &#x5783;&#x573E;&#x5206;&#x7C7B;&#x5F00;&#x6E90;EfficientNet&#x5B9E;&#x73B0;&#x4ECB;&#x7ECD;</h3>
+<h4 id="41021-&#x6A21;&#x578B;&#x76EE;&#x5F55;">4.10.2.1 &#x6A21;&#x578B;&#x76EE;&#x5F55;</h4>
+<h5 id="tensorflow20-&#x53EF;&#x8FDB;&#x884C;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x7684;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x4E0D;&#x5B58;&#x5728;efficientnet&#xFF0C;&#x9700;&#x8981;&#x7B2C;&#x4E09;&#x65B9;&#x5B9E;&#x73B0;&#x7684;&#x6A21;&#x578B;&#x4E24;&#x79CD;&#x9009;&#x62E9;&#xFF1A;">TensorFlow2.0 &#x53EF;&#x8FDB;&#x884C;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x7684;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x4E0D;&#x5B58;&#x5728;efficientnet&#xFF0C;&#x9700;&#x8981;&#x7B2C;&#x4E09;&#x65B9;&#x5B9E;&#x73B0;&#x7684;&#x6A21;&#x578B;&#x4E24;&#x79CD;&#x9009;&#x62E9;&#xFF1A;</h5>
+<p>1&#x3001;&#x53EF;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x7684;TF&#x4F4E;&#x7248;&#x672C;&#x80FD;&#x4F7F;&#x7528;<strong>&#xFF08;&#x90E8;&#x5206;&#x64CD;&#x4F5C;&#x4E0D;&#x652F;&#x6301;&#x9ED8;&#x8BA4;Eager &#x6A21;&#x5F0F;&#xFF09;</strong></p>
+<p><a href="https://github.com/calmisential/Basic_CNNs_TensorFlow2" target="_blank">https://github.com/calmisential/Basic_CNNs_TensorFlow2</a></p>
+<p>&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x7684;&#x662F;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4E0E;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x4E0A;&#x8FC1;&#x79FB;&#xFF0C;&#x4F7F;&#x7528;&#x7B80;&#x5355;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> efficientnet <span class="hljs-keyword">import</span> EfficientNetB0
+EfficientNetB0(weights=<span class="hljs-keyword">None</span>, include_top=<span class="hljs-keyword">False</span>, input_shape=(<span class="hljs-number">336</span>, <span class="hljs-number">336</span>, <span class="hljs-number">3</span>))
+</code></pre>
+<p>2&#x3001;TF2.0&#x5B9E;&#x73B0;&#x7248;&#x672C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5728;imagenet&#x4E0A;&#x7684;&#x4E0E;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#xFF0C;&#x7248;&#x672C;&#x7B80;&#x5355;&#x6613;&#x61C2;&#xFF0C;&#x9879;&#x76EE;&#x4E2D;&#x4E5F;&#x542B;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x6A21;&#x578B;</p>
+<p><a href="https://github.com/Tony607/efficientnet_keras_transfer_learning" target="_blank">https://github.com/Tony607/efficientnet_keras_transfer_learning</a></p>
+<p><img src="../images/&#x6A21;&#x578B;&#x76EE;&#x5F55;&#x4ECB;&#x7ECD;.jpg" style="zoom:50%;"></p>
+<ul>
+<li>model.py: &#x6A21;&#x578B;&#x7684;&#x4E3B;&#x7ED3;&#x6784;</li>
+<li>&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x4E3A;&#x76F8;&#x5173;&#x5C01;&#x88C5;&#x63A5;&#x53E3;</li>
+</ul>
+<p>&#x53BB;&#x5DE5;&#x7A0B;&#x4E2D;&#x770B;&#x770B;&#x6307;&#x5B9A;&#x6A21;&#x578B;&#x3002;&#x5176;&#x4E2D;&#x53C2;&#x6570;include_top&#xFF0C;&#x6307;&#x5B9A;&#x4E86;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#xFF1A;</p>
+<pre><code class="lang-python">    <span class="hljs-keyword">if</span> include_top:
+        x = KL.GlobalAveragePooling2D(data_format=global_params.data_format)(x)
+        <span class="hljs-keyword">if</span> global_params.dropout_rate &gt; <span class="hljs-number">0</span>:
+            x = KL.Dropout(global_params.dropout_rate)(x)
+        x = KL.Dense(global_params.num_classes, kernel_initializer=DenseKernalInitializer())(x)
+        x = KL.Activation(<span class="hljs-string">&apos;softmax&apos;</span>)(x)
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">if</span> pooling == <span class="hljs-string">&apos;avg&apos;</span>:
+            x = KL.GlobalAveragePooling2D(data_format=global_params.data_format)(x)
+        <span class="hljs-keyword">elif</span> pooling == <span class="hljs-string">&apos;max&apos;</span>:
+            x = KL.GlobalMaxPooling2D(data_format=global_params.data_format)(x)
+</code></pre>
+<h3 id="4103-&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x4EE5;&#x53CA;&#x5B66;&#x4E60;&#x7387;trick">4.10.3 &#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x4EE5;&#x53CA;&#x5B66;&#x4E60;&#x7387;trick</h3>
+<h4 id="41021-rectified-adamadam-with-warm-up">4.10.2.1 Rectified Adam(Adam with warm up)</h4>
+<p>RAdam&#x80FD;&#x6839;&#x636E;&#x65B9;&#x5DEE;&#x5206;&#x6563;&#x5EA6;&#xFF0C;&#x52A8;&#x6001;&#x5730;&#x6253;&#x5F00;&#x6216;&#x8005; &#x5173;&#x95ED;&#x81EA;&#x9002;&#x5E94;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x4E0D;&#x9700;&#x8981;&#x53EF; &#x8C03;&#x53C2;&#x6570;&#x5B66;&#x4E60;&#x7387;&#x9884;&#x70ED;&#x7684;&#x65B9;&#x6CD5;&#x3002; </p>
+<p><img src="../images/RAdam.jpg" style="zoom:40%;"></p>
+<p>&#x4E0A;&#x8FF0;&#x7ED3;&#x679C;&#x8868;&#x660E;&#x4F7F;&#x7528;&#x539F;&#x59CB;Adam&#x5FC5;&#x987B;&#x9884;&#x70ED;&#xFF0C;&#x5426;&#x5219;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x4F1A;&#x53D8;&#x5F97;&#x626D;&#x66F2;</p>
+<h4 id="41022-warmup">4.10.2.2 Warmup</h4>
+<ul>
+<li>&#x5B9A;&#x4E49;&#xFF1A;&#x5B66;&#x4E60;&#x7387;&#x9884;&#x70ED;&#x5C31;&#x662F;&#x5728;&#x521A;&#x5F00;&#x59CB;&#x8BAD;&#x7EC3;&#x7684;&#x65F6;&#x5019;&#x5148;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x8F83;&#x5C0F;&#x7684;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x8BAD;&#x7EC3;&#x4E00;&#x4E9B;epoches&#x6216;iterations&#xFF0C;&#x7B49;&#x6A21;&#x578B;&#x7A33;&#x5B9A;&#x65F6;&#x518D;&#x4FEE;&#x6539;&#x4E3A;&#x9884;&#x5148;&#x8BBE;&#x7F6E;&#x7684;&#x5B66;&#x4E60;&#x7387;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x3002;</li>
+</ul>
+<p>&#x5B66;&#x4E60;&#x7387;&#x662F;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x8BAD;&#x7EC3;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x4E4B;&#x4E00;&#xFF0C;&#x9488;&#x5BF9;&#x5B66;&#x4E60;&#x7387;&#x7684;&#x6280;&#x5DE7;&#x6709;&#x5F88;&#x591A;&#x3002;Warm up&#x662F;&#x5728;ResNet&#x8BBA;&#x6587;&#x4E2D;&#x63D0;&#x5230;&#x7684;&#x4E00;&#x79CD;&#x5B66;&#x4E60;&#x7387;&#x9884;&#x70ED;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<ul>
+<li>&#x539F;&#x56E0;&#xFF1A;&#x7531;&#x4E8E;&#x521A;&#x5F00;&#x59CB;&#x8BAD;&#x7EC3;&#x65F6;&#x6A21;&#x578B;&#x7684;&#x6743;&#x91CD;(weights)&#x662F;&#x968F;&#x673A;&#x521D;&#x59CB;&#x5316;&#x7684;&#xFF0C;&#x6B64;&#x65F6;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x8F83;&#x5927;&#x7684;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5E26;&#x6765;&#x6A21;&#x578B;&#x7684;&#x4E0D;&#x7A33;&#x5B9A;&#x3002;<ul>
+<li>&#x8BBA;&#x6587;&#x4E2D;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;110&#x5C42;&#x7684;ResNet&#x5728;cifar10&#x4E0A;&#x8BAD;&#x7EC3;&#x65F6;&#xFF0C;&#x5148;&#x7528;0.01&#x7684;&#x5B66;&#x4E60;&#x7387;&#x8BAD;&#x7EC3;&#x76F4;&#x5230;&#x8BAD;&#x7EC3;&#x8BEF;&#x5DEE;&#x4F4E;&#x4E8E;80%(&#x5927;&#x6982;&#x8BAD;&#x7EC3;&#x4E86;400&#x4E2A;iterations)&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;0.1&#x7684;&#x5B66;&#x4E60;&#x7387;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&#x7406;&#x89E3;&#xFF1A;&#x521A;&#x5F00;&#x59CB;&#x6A21;&#x578B;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x201C;&#x5206;&#x5E03;&#x201D;&#x7406;&#x89E3;&#x4E3A;&#x96F6;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x8BF4;&#x201C;&#x5747;&#x5300;&#x5206;&#x5E03;&#x201D;&#xFF1B;&#x5728;&#x7B2C;&#x4E00;&#x8F6E;&#x8BAD;&#x7EC3;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x5BF9;&#x6A21;&#x578B;&#x6765;&#x8BF4;&#x90FD;&#x662F;&#x65B0;&#x7684;&#xFF0C;&#x6A21;&#x578B;&#x4F1A;&#x5F88;&#x5FEB;&#x5730;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5206;&#x5E03;&#x4FEE;&#x6B63;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x65F6;&#x5019;&#x5B66;&#x4E60;&#x7387;&#x5C31;&#x5F88;&#x5927;&#xFF0C;&#x6781;&#x6709;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5BF9;&#x8BE5;&#x6570;&#x636E;&#x201C;&#x8FC7;&#x62DF;&#x5408;&#x201D;&#xFF0C;&#x540E;&#x9762;&#x8981;&#x901A;&#x8FC7;&#x591A;&#x8F6E;&#x8BAD;&#x7EC3;&#x624D;&#x80FD;&#x62C9;&#x56DE;&#x6765;&#xFF0C;&#x6D6A;&#x8D39;&#x65F6;&#x95F4;&#x3002;</p>
+</blockquote>
+<h4 id="41023-&#x4F59;&#x5F26;&#x5B66;&#x4E60;&#x7387;&#x8870;&#x51CF;&#xFF08;cosine-learning-rate-decay&#xFF09;">4.10.2.3 &#x4F59;&#x5F26;&#x5B66;&#x4E60;&#x7387;&#x8870;&#x51CF;&#xFF08;Cosine Learning rate decay&#xFF09;</h4>
+<p>&#x4F59;&#x5F26;&#x5B66;&#x4E60;&#x7387;&#x8870;&#x51CF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;Cosine Learning rate decay&#x3002;&#x516C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>&#x3B7;</mi><mi>t</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>(</mo><mn>1</mn><mo>+</mo><mi>c</mi><mi>o</mi><mi>s</mi><mo>(</mo><mfrac><mrow><mi>t</mi><mi>&#x3C0;</mi></mrow><mrow><mi>T</mi></mrow></mfrac><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">
+\eta_t=\frac{1}{2} (1+cos(\frac{t\pi}{T}))
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.32144em;"></span><span class="strut bottom" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">&#x3B7;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">t</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathrm">2</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathrm">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mbin">+</span><span class="mord mathit">c</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mopen">(</span><span class="mord reset-textstyle displaystyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.686em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle cramped"><span class="mord textstyle cramped"><span class="mord mathit" style="margin-right:0.13889em;">T</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.677em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathit">t</span><span class="mord mathit" style="margin-right:0.03588em;">&#x3C0;</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span>
+&#x4E0B;&#x56FE;&#x662F;&#x9010;&#x6B65;&#x8870;&#x51CF;&#x5B66;&#x4E60;&#x7387;&#x4E0E;&#x4F59;&#x5F26;&#x5B66;&#x4E60;&#x7387;&#x8870;&#x51CF;&#x7684;&#x65B9;&#x5F0F;&#x5BF9;&#x6BD4;&#xFF1A;</p>
+<p><img src="../images/&#x4F59;&#x5F26;&#x8870;&#x51CF;.jpg" style="zoom:40%;"></p>
+<ul>
+<li>&#x73B0;&#x8C61;&#xFF1A;&#x5F53;Step Decay&#x65B9;&#x6CD5;&#x7684;&#x5B66;&#x4E60;&#x7387;&#x5DF2;&#x7ECF;&#x8F83;&#x5C0F;&#x7684;&#x65F6;&#x5019;&#xFF0C;Cos Decay&#x65B9;&#x6CD5;&#x7684;&#x5B66;&#x4E60;&#x4ECD;&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x56E0;&#x800C;&#x80FD;&#x591F;&#x52A0;&#x901F;&#x6574;&#x4E2A;&#x8BAD;&#x7EC3;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x4F46;&#x662F;&#x770B;&#x56FE;&#x4E2D;b&#xFF0C;&#x5F88;&#x660E;&#x663E;Step Decay&#x518D;&#x8870;&#x51CF;&#x4E4B;&#x540E;&#xFF0C;&#x51C6;&#x786E;&#x7387;&#x5C31;&#x4E0A;&#x6765;&#x4E86;&#xFF0C;&#x8BF4;&#x660E;&#x8870;&#x51CF;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x91CF;&#x7EA7;&#x6548;&#x7528;&#x5DF2;&#x7ECF;&#x4E0D;&#x5F3A;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;Cos decay&#x8FD8;&#x662F;&#x90A3;&#x4E2A;&#x6570;&#x91CF;&#x7EA7;&#xFF0C;&#x6240;&#x4EE5;&#x901F;&#x5EA6;&#x5C31;&#x6BD4;Step Decay&#x6162;&#x4E86;</li>
+<li>&#x7ED3;&#x679C;&#xFF1A;<ul>
+<li>1&#x3001;cos&#x7684;&#x5B66;&#x4E60;&#x7387;&#x7684;&#x524D;&#x671F;&#x662F;warm-up&#x9636;&#x6BB5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x662F;&#x4EE5;&#x7EBF;&#x6027;&#x589E;&#x957F;&#x7684;&#x65B9;&#x5F0F;&#x589E;&#x957F;&#x5230;&#x521D;&#x59CB;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x7136;&#x540E;&#x5F00;&#x59CB;&#x6267;&#x884C;cos&#x7684;&#x5B66;&#x4E60;&#x7387;&#x53D8;&#x5316;&#xFF0C;&#x6700;&#x7EC8;&#x4E24;&#x79CD;&#x5B66;&#x4E60;&#x7387;&#x8FBE;&#x5230;&#x4E00;&#x81F4;&#x3002;<strong>&#x4ECE;&#x51C6;&#x786E;&#x6027;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#xFF0C;&#x4F7F;&#x7528;step&#x7684;&#x65B9;&#x5F0F;&#x4F3C;&#x4E4E;&#x5B66;&#x4E60;&#x7684;&#x66F4;&#x5FEB;&#x4E00;&#x4E9B;&#x3002;&#x800C;&#x4E14;&#x5176;&#x53D8;&#x5316;&#x7684;&#x62D0;&#x70B9;&#x548C;&#x5176;&#x5B66;&#x4E60;&#x7387;&#x7684;&#x62D0;&#x70B9;&#x662F;&#x5BF9;&#x5E94;&#x7740;&#x7684;&#xFF0C;&#x5373;&#x5B66;&#x4E60;&#x7387;&#x964D;&#x4E86;&#x4E4B;&#x540E;&#xFF0C;&#x9A8C;&#x8BC1;&#x7684;&#x51C6;&#x786E;&#x6027;&#x4E5F;&#x8DDF;&#x7740;&#x5F00;&#x59CB;&#x63D0;&#x5347;&#xFF0C;&#x800C;cos&#x5B66;&#x4E60;&#x7387;&#x7684;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x51C6;&#x786E;&#x6027;&#x90FD;&#x5F88;&#x5E73;&#x7A33;&#xFF0C;&#x6700;&#x7EC8;&#x4E24;&#x8005;&#x7684;&#x51C6;&#x786E;&#x6027;&#x4E5F;&#x662F;&#x4E00;&#x81F4;&#x3002;</strong></li>
+<li>2&#x3001;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x4E2D;&#x95F4;&#x7684;&#x5B66;&#x4E60;&#x8FC7;&#x7A0B;&#x3002;&#x800C;&#x4E14;step&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x968F;&#x673A;&#x6027;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x8981;&#x4EE5;&#x591A;&#x5927;&#x7684;step&#x6765;&#x6539;&#x53D8;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x2019;step&#x2019;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x67D0;&#x79CD;&#x65B9;&#x5F0F;&#x91CF;&#x5316;</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&#x5B9A;&#x4E49;&#xFF1A;&#x5E38;&#x7528;&#x7684;Learning Rate Decay&#x662F;Step Decay&#xFF0C;&#x5373;&#x6BCF;&#x9694;N&#x4E2A;Epoch&#xFF0C;learning rate&#x4E58;&#x4E0A;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;decay&#x7CFB;&#x6570;&#x3002;</p>
+<ul>
+<li>&#x4F46;&#x662F;Step Decay&#x4E0D;&#x597D;&#x7684;&#x5730;&#x65B9;&#x5728;&#x4E8E;&#x5B66;&#x4E60;&#x7387;&#x8870;&#x51CF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8DF3;&#x8DC3;&#x53D8;&#x5316;&#x8F83;&#x5927;&#xFF0C;&#x5E26;&#x6765;&#x4E86;&#x8F83;&#x5927;&#x7684;&#x51B2;&#x91CF;Momentum</li>
+</ul>
+</blockquote>
+<h4 id="41024-tensorflow&#x5B9E;&#x73B0;">4.10.2.4 TensorFlow&#x5B9E;&#x73B0;</h4>
+<blockquote>
+<p> Keras &#x7684; callbacks &#x4E2D;&#x6709; ReduceLROnPlateau() &#x548C; LearningRateScheduler() &#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x7684;&#x8C03;&#x6574;&#x5B66;&#x4E60;&#x7387;&#x3002;&#x4F46;&#x662F;&#x524D;&#x8005;&#x53EA;&#x5728;&#x9A8C;&#x8BC1;&#x8BEF;&#x5DEE;&#x505C;&#x6B62;&#x8870;&#x51CF;&#x7684;&#x65F6;&#x5019;&#x51CF;&#x5C0F;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x540E;&#x8005;&#x53EA;&#x80FD;&#x5728;&#x6BCF;&#x4E2A; Epoch &#x5F00;&#x59CB;&#x6216;&#x7ED3;&#x675F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6539;&#x53D8;&#x5B66;&#x4E60;&#x7387;&#x4E24;&#x8005;&#x4F7F;&#x7528;&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;<a href="https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/keras/callbacks/LearningRateScheduler#class_learningratescheduler" target="_blank">https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/keras/callbacks/LearningRateScheduler#class_learningratescheduler</a></p>
+</blockquote>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x8BAD;&#x7EC3;&#x7684;&#x65F6;&#x5019;&#x6BCF;&#x6279;&#x6B21;&#x66F4;&#x52A0;&#x7EC6;&#x81F4;&#x7684;&#x63A7;&#x5236;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;</p>
+<h5 id="1&#x3001;tfkerascallbackscallback">1&#x3001;tf.keras.callbacks.Callback</h5>
+<p>&#x8BE5;&#x7C7B;&#x5728;<code>Model</code> &#x7684;<code>.fit()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x4E0B;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;</p>
+<ul>
+<li>on_batch_begin(  batch, logs=None)<ul>
+<li>&#x4E00;&#x6279;&#x6B21;&#x6570;&#x636E;&#x5F00;&#x59CB;&#x65F6;&#x7684;&#x5904;&#x7406;</li>
+</ul>
+</li>
+<li>on_batch_end(batch, logs=None)<ul>
+<li>&#x4E00;&#x6279;&#x6B21;&#x6570;&#x636E;&#x5904;&#x7406;&#x7ED3;&#x675F;</li>
+</ul>
+</li>
+<li>on_epoch_begin&#x548C;on_epoch_end</li>
+</ul>
+<h4 id="4103-&#x5783;&#x573E;&#x5206;&#x7C7B;&#x5E26;&#x6709;warmup&#x7684;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x8C03;&#x5EA6;&#x5B9E;&#x73B0;">4.10.3 &#x5783;&#x573E;&#x5206;&#x7C7B;&#x5E26;&#x6709;warmup&#x7684;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x8C03;&#x5EA6;&#x5B9E;&#x73B0;</h4>
+<h4 id="41031-&#x6D41;&#x7A0B;&#x5206;&#x6790;">4.10.3.1 &#x6D41;&#x7A0B;&#x5206;&#x6790;</h4>
+<ul>
+<li>&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x7ED3;&#x7B97;<ul>
+<li>warmup&#x9636;&#x6BB5;</li>
+<li>&#x4F59;&#x5F26;&#x9000;&#x706B;&#x9636;&#x6BB5;</li>
+</ul>
+</li>
+</ul>
+<p><img src="../images/&#x4F59;&#x5F26;&#x9000;&#x706B;&#x4E0E;wamup.jpg" style="zoom:40%;"></p>
+<h4 id="41032-&#x5B8C;&#x6574;&#x4EE3;&#x7801;&#x8FC7;&#x7A0B;&#x5B9E;&#x73B0;">4.10.3.2 &#x5B8C;&#x6574;&#x4EE3;&#x7801;&#x8FC7;&#x7A0B;&#x5B9E;&#x73B0;</h4>
+<p>&#x53C2;&#x8003;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;</p>
+<ul>
+<li>&#x6B65;&#x9AA4;&#xFF1A;<ul>
+<li>1&#x3001;&#x81EA;&#x5B9A;&#x4E49;WarmUpCosineDecayScheduler&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x5B9E;&#x73B0;&#x6279;&#x6B21;&#x524D;&#x540E;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;</li>
+<li>2&#x3001;&#x5B9E;&#x73B0;warmup&#x7684;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;</li>
+</ul>
+</li>
+</ul>
+<p>1&#x3001;&#x81EA;&#x5B9A;&#x4E49;WarmUpCosineDecayScheduler&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x5B9E;&#x73B0;&#x6279;&#x6B21;&#x524D;&#x540E;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">from</span> tensorflow.keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-keyword">from</span> tensorflow.keras.models <span class="hljs-keyword">import</span> Sequential
+<span class="hljs-keyword">from</span> tensorflow.keras.layers <span class="hljs-keyword">import</span> Dense
+<span class="hljs-keyword">import</span> os
+os.environ[<span class="hljs-string">&quot;TF_CPP_MIN_LOG_LEVEL&quot;</span>] = <span class="hljs-string">&quot;2&quot;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WarmUpCosineDecayScheduler</span><span class="hljs-params">(tf.keras.callbacks.Callback)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x5E26;&#x6709;warmup&#x7684;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x8C03;&#x5EA6;
+    &quot;&quot;&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,
+                 learning_rate_base,
+                 total_steps,
+                 global_step_init=<span class="hljs-number">0</span>,
+                 warmup_learning_rate=<span class="hljs-number">0.0</span>,
+                 warmup_steps=<span class="hljs-number">0</span>,
+                 hold_base_rate_steps=<span class="hljs-number">0</span>,
+                 verbose=<span class="hljs-number">0</span>)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x521D;&#x59CB;&#x5316;&#x53C2;&#x6570;
+        :param learning_rate_base: &#x57FA;&#x7840;&#x5B66;&#x4E60;&#x7387;
+        :param total_steps: &#x603B;&#x5171;&#x8FED;&#x4EE3;&#x7684;&#x6279;&#x6B21;&#x6B65;&#x6570; epoch * num_samples / batch_size
+        :param global_step_init: &#x521D;&#x59CB;
+        :param warmup_learning_rate: &#x9884;&#x70ED;&#x5B66;&#x4E60;&#x7387;&#x9ED8;&#x8BA4;0.0
+        :param warmup_steps:&#x9884;&#x70ED;&#x7684;&#x6B65;&#x6570;&#x9ED8;&#x8BA4;0
+        :param hold_base_rate_steps:
+        :param verbose:
+        &quot;&quot;&quot;</span>
+        super(WarmUpCosineDecayScheduler, self).__init__()
+        self.learning_rate_base = learning_rate_base
+        self.total_steps = total_steps
+        self.global_step = global_step_init
+        self.warmup_learning_rate = warmup_learning_rate
+        self.warmup_steps = warmup_steps
+        self.hold_base_rate_steps = hold_base_rate_steps
+        <span class="hljs-comment"># &#x662F;&#x5426;&#x5728;&#x6BCF;&#x6B21;&#x8BAD;&#x7EC3;&#x7ED3;&#x675F;&#x6253;&#x5370;&#x5B66;&#x4E60;&#x7387;</span>
+        self.verbose = verbose
+        <span class="hljs-comment"># &#x8BB0;&#x5F55;&#x6240;&#x6709;&#x6279;&#x6B21;&#x4E0B;&#x6765;&#x7684;&#x6BCF;&#x6B21;&#x51C6;&#x786E;&#x7684;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6253;&#x5370;&#x663E;&#x793A;</span>
+        self.learning_rates = []
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_batch_end</span><span class="hljs-params">(self, batch, logs=None)</span>:</span>
+        <span class="hljs-comment"># 1&#x3001;&#x6279;&#x6B21;&#x5F00;&#x59CB;&#x524D;&#x5F53;&#x524D;&#x6B65;&#x6570;+1</span>
+        self.global_step = self.global_step + <span class="hljs-number">1</span>
+        <span class="hljs-comment"># 2&#x3001;&#x83B7;&#x53D6;&#x4F18;&#x5316;&#x5668;&#x4E0A;&#x4E00;&#x6B21;&#x7684;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x5E76;&#x8BB0;&#x5F55;</span>
+        lr = K.get_value(self.model.optimizer.lr)
+        self.learning_rates.append(lr)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_batch_begin</span><span class="hljs-params">(self, batch, logs=None)</span>:</span>
+        <span class="hljs-comment"># 1&#x3001;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x4EE5;&#x53CA;&#x8BB0;&#x5F55;&#x7684;&#x6B21;&#x6570;&#x548C;&#x4E0A;&#x6B21;&#x5B66;&#x4E60;&#x7387;</span>
+        lr = cosine_decay_with_warmup(global_step=self.global_step,
+                                      learning_rate_base=self.learning_rate_base,
+                                      total_steps=self.total_steps,
+                                      warmup_learning_rate=self.warmup_learning_rate,
+                                      warmup_steps=self.warmup_steps,
+                                      hold_base_rate_steps=self.hold_base_rate_steps)
+        <span class="hljs-comment"># 2&#x3001;&#x8BBE;&#x7F6E;&#x4F18;&#x5316;&#x5668;&#x672C;&#x6B21;&#x7684;&#x5B66;&#x4E60;&#x7387;</span>
+        K.set_value(self.model.optimizer.lr, lr)
+        <span class="hljs-keyword">if</span> self.verbose &gt; <span class="hljs-number">0</span>:
+            print(<span class="hljs-string">&apos;\n&#x6279;&#x6B21;&#x6570; %05d: &#x8BBE;&#x7F6E;&#x5B66;&#x4E60;&#x7387;&#x4E3A;&apos;</span>
+                  <span class="hljs-string">&apos; %s.&apos;</span> % (self.global_step + <span class="hljs-number">1</span>, lr))
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x9762;&#x6D89;&#x53CA;&#x5230;&#x4E00;&#x4E2A;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x4F18;&#x5316;&#x5668;&#x5B66;&#x4E60;&#x7387;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x4F1A;&#x7528;&#x5230;keras.backend&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x3002;keras&#x662F;&#x4E00;&#x79CD;&#x57FA;&#x4E8E;&#x6A21;&#x5757;&#x7684;&#x9AD8;&#x7EA7;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#xFF0C;&#x5B83;&#x5E76;&#x6CA1;&#x6709;&#x4EC5;&#x4F9D;&#x8D56;&#x4E8E;&#x67D0;&#x4E00;&#x79CD;&#x9AD8;&#x901F;&#x5E95;&#x5C42;&#x5F20;&#x91CF;&#x5E93;&#xFF0C;&#x800C;&#x662F;&#x5BF9;&#x5404;&#x79CD;&#x5E95;&#x5C42;&#x5F20;&#x91CF;&#x5E93;&#x8FDB;&#x884C;&#x9AD8;&#x5C42;&#x6A21;&#x5757;&#x5C01;&#x88C5;&#xFF0C;&#x8BA9;&#x5E95;&#x5C42;&#x5E93;&#x5B8C;&#x6210;&#x8BF8;&#x5982;&#x5F20;&#x91CF;&#x79EF;&#x3001;&#x5377;&#x79EF;&#x64CD;&#x4F5C;&#x3002;&#x5728;keras&#x4E2D;&#xFF0C;&#x5404;&#x79CD;&#x5E95;&#x5C42;&#x5E93;&#xFF08;Google&#x5F00;&#x53D1;&#x7684;TensorFlow&#x3001;&#x8499;&#x7279;&#x5229;&#x5C14;&#x5927;&#x5B66;&#x5B9E;&#x9A8C;&#x5BA4;&#x5F00;&#x53D1;&#x7684;Theano&#x3001;&#x5FAE;&#x8F6F;&#x5F00;&#x53D1;&#x7684;CNTK&#xFF09;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x540E;&#x7AEF;&#xFF08;backend&#xFF09;&#x5F15;&#x64CE;&#x4E3A;keras&#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x3002;</p>
+<h4 id="&#x95EE;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x4FEE;&#x6539;keras&#x4F7F;&#x7528;&#x7684;backend">&#x95EE;&#x9898;&#xFF1A;&#x5982;&#x4F55;&#x4FEE;&#x6539;Keras&#x4F7F;&#x7528;&#x7684;backend</h4>
+<p>&#xFF08;1&#xFF09;&#x901A;&#x8FC7;&#x4FEE;&#x6539;keras&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6765;&#x4FEE;&#x6539;backend</p>
+<p>&#x4E00;&#x65E6;&#x8FD0;&#x884C;&#x8FC7;&#x4E00;&#x6B21;Keras&#xFF0C;&#x5C31;&#x4F1A;&#x5728;$HOME/.keras&#x4E0B;&#x751F;&#x6210;&#x914D;&#x7F6E;&#x6587;&#x4EF6;keras.json&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&quot;backend&quot;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x5373;&#x4E3A;keras&#x6240;&#x4F7F;&#x7528;&#x7684;&#x540E;&#x7AEF;&#x5E93;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BE5;&#x503C;&#x4E3A;&quot;tensorflow&quot;&#x3002;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x8981;&#x9009;&#x62E9;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x5E93;&quot;theano&quot;&#x3001;&quot;cntk&quot;&#xFF0C;&#x751A;&#x81F3;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x5E95;&#x5C42;&#x5E93;&#x3002;</p>
+<p>&#xFF08;2&#xFF09;&#x901A;&#x8FC7;&#x8FD0;&#x884C;Python&#x811A;&#x672C;&#x65F6;&#x589E;&#x52A0;&#x914D;&#x7F6E;&#x9879;&#x6307;&#x5B9A;backend</p>
+<pre><code class="lang-console">$ KERAS_BACKEND=theano python -c &quot;from keras import backend&quot;
+Using Theano backend.
+</code></pre>
+<p>&#x5BFC;&#x5165;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-python3">from keras import backend as K
+</code></pre>
+<p>&#x5176;&#x4E2D;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5F20;&#x91CF;&#x7684;&#x503C;&#xFF1A;</p>
+<pre><code class="lang-python">lr = K.get_value(self.model.optimizer.lr)
+K.set_value(self.model.optimizer.lr, lr)
+</code></pre>
+<h5 id="2&#x3001;&#x5B9E;&#x73B0;warmup&#x7684;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;">2&#x3001;&#x5B9E;&#x73B0;warmup&#x7684;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;</h5>
+<ul>
+<li>&#x6B65;&#x9AA4;&#xFF1A;<ul>
+<li>1&#x3001;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x8BA1;&#x7B97;</li>
+<li>2&#x3001;warmup&#x4E4B;&#x540E;&#x7684;&#x5B66;&#x4E60;&#x7387;&#x8BA1;&#x7B97;<ul>
+<li>&#x5982;&#x679C;&#x9884;&#x7559;&#x5927;&#x4E8E;0&#xFF0C;&#x5224;&#x65AD;&#x76EE;&#x524D;&#x6B65;&#x6570;&#x662F;&#x5426; &gt; warmup&#x6B65;&#x6570;+&#x9884;&#x7559;&#x6B65;&#x6570;&#xFF0C;&#x662F;&#x7684;&#x8BDD;&#x8FD4;&#x56DE;&#x521A;&#x624D;&#x4E0A;&#x9762;&#x8BA1;&#x7B97;&#x7684;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x4E0D;&#x662F;&#x7684;&#x8BDD;&#x4F7F;&#x7528;warmup&#x4E4B;&#x540E;&#x7684;&#x57FA;&#x7840;&#x5B66;&#x4E60;&#x7387;</li>
+</ul>
+</li>
+<li>3&#x3001;warmup&#x5B66;&#x4E60;&#x7387;&#x8BA1;&#x7B97;&#xFF0C;&#x5E76;&#x5224;&#x65AD;&#x5927;&#x5C0F;</li>
+<li>4&#x3001;&#x5982;&#x679C;&#x6700;&#x540E;&#x5F53;&#x524D;&#x5230;&#x8FBE;&#x7684;&#x6B65;&#x6570;&#x5927;&#x4E8E;&#x603B;&#x6B65;&#x6570;&#xFF0C;&#x5219;&#x5F52;0&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7684;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x5B66;&#x4E60;&#x7387;&#xFF08;&#x53EF;&#x80FD;&#x662F;warmup&#x5B66;&#x4E60;&#x7387;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x4F59;&#x5F26;&#x8870;&#x51CF;&#x7ED3;&#x679C;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<p><img src="../images/&#x4F59;&#x5F26;&#x9000;&#x706B;&#x4E0E;wamup.jpg" style="zoom:50%;"></p>
+<p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cosine_decay_with_warmup</span><span class="hljs-params">(global_step,
+                             learning_rate_base,
+                             total_steps,
+                             warmup_learning_rate=<span class="hljs-number">0.0</span>,
+                             warmup_steps=<span class="hljs-number">0</span>,
+                             hold_base_rate_steps=<span class="hljs-number">0</span>)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x6BCF;&#x6279;&#x6B21;&#x5E26;&#x6709;warmup&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x8BA1;&#x7B97;
+    :param global_step: &#x5F53;&#x524D;&#x5230;&#x8FBE;&#x7684;&#x6B65;&#x6570;
+    :param learning_rate_base: warmup&#x4E4B;&#x540E;&#x7684;&#x57FA;&#x7840;&#x5B66;&#x4E60;&#x7387;
+    :param total_steps: &#x603B;&#x9700;&#x8981;&#x6279;&#x6B21;&#x6570;
+    :param warmup_learning_rate: warmup&#x5F00;&#x59CB;&#x7684;&#x5B66;&#x4E60;&#x7387;
+    :param warmup_steps:warmup&#x5B66;&#x4E60;&#x7387; &#x6B65;&#x6570;
+    :param hold_base_rate_steps: &#x9884;&#x7559;&#x603B;&#x6B65;&#x6570;&#x548C;warmup&#x6B65;&#x6570;&#x95F4;&#x9694;
+    :return:
+    &quot;&quot;&quot;</span>
+
+    <span class="hljs-keyword">if</span> total_steps &lt; warmup_steps:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&apos;&#x603B;&#x6B65;&#x6570;&#x5FC5;&#x987B;&#x5927;&#x4E8E;warmup&apos;</span>)
+
+    <span class="hljs-comment"># 1&#x3001;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x8BA1;&#x7B97;</span>
+    <span class="hljs-comment"># &#x4ECE;warmup&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x8BA1;&#x7B97;</span>
+    <span class="hljs-comment"># 0.5 * 0.01 * (1 + cos(pi*(1-5-0)/(10 - 5 - 0))</span>
+    learning_rate = <span class="hljs-number">0.5</span> * learning_rate_base * (<span class="hljs-number">1</span> + np.cos(
+        np.pi *
+        (global_step - warmup_steps - hold_base_rate_steps
+         ) / float(total_steps - warmup_steps - hold_base_rate_steps)))
+
+    <span class="hljs-comment"># 2&#x3001;warmup&#x4E4B;&#x540E;&#x7684;&#x5B66;&#x4E60;&#x7387;&#x8BA1;&#x7B97;</span>
+    <span class="hljs-comment"># &#x5982;&#x679C;&#x9884;&#x7559;&#x5927;&#x4E8E;0&#xFF0C;&#x5224;&#x65AD;&#x76EE;&#x524D;&#x6B65;&#x6570;&#x662F;&#x5426; &gt; warmup&#x6B65;&#x6570;+&#x9884;&#x7559;&#x6B65;&#x6570;&#xFF0C;&#x662F;&#x7684;&#x8BDD;&#x8FD4;&#x56DE;&#x521A;&#x624D;&#x4E0A;&#x9762;&#x8BA1;&#x7B97;&#x7684;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x4E0D;&#x662F;&#x7684;&#x8BDD;&#x4F7F;&#x7528;warmup&#x4E4B;&#x540E;&#x7684;&#x57FA;&#x7840;&#x5B66;&#x4E60;&#x7387;</span>
+    <span class="hljs-keyword">if</span> hold_base_rate_steps &gt; <span class="hljs-number">0</span>:
+        learning_rate = np.where(global_step &gt; warmup_steps + hold_base_rate_steps,
+                                 learning_rate, learning_rate_base)
+    <span class="hljs-comment"># 3&#x3001;warmup&#x6B65;&#x6570;&#x662F;&#x5927;&#x4E8E;0&#x7684;</span>
+    <span class="hljs-keyword">if</span> warmup_steps &gt; <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">if</span> learning_rate_base &lt; warmup_learning_rate:
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&apos;warmup&#x540E;&#x5B66;&#x4E60;&#x7387;&#x5FC5;&#x987B;&#x5927;&#x4E8E;warmup&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x7387;&apos;</span>)
+        <span class="hljs-comment"># 1&#x3001;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;0.01&#x548C;0.000006&#x7684;&#x5DEE;&#x8DDD;/warmup_steps&#xFF0C;&#x5F97;&#x5230;warmup&#x7ED3;&#x675F;&#x524D;&#x589E;&#x52A0;&#x591A;&#x5C11;</span>
+        slope = (learning_rate_base - warmup_learning_rate) / warmup_steps
+        <span class="hljs-comment"># 2&#x3001;&#x8BA1;&#x7B97;warmup&#x4E0B;&#x4E00;&#x6B65;&#x7B2C;global_step&#x7684;&#x5B66;&#x4E60;&#x7387;</span>
+        warmup_rate = slope * global_step + warmup_learning_rate
+        <span class="hljs-comment"># 3&#x3001;&#x5224;&#x65AD;global_step&#x5C0F;&#x4E8E;warmup_steps&#x7684;&#x8BDD;&#xFF0C;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;warmup&#x5F53;&#x65F6;&#x7684;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x5426;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x8BA1;&#x7B97;&#x7684;</span>
+        learning_rate = np.where(global_step &lt; warmup_steps, warmup_rate,
+                                 learning_rate)
+
+    <span class="hljs-comment"># 4&#x3001;&#x5982;&#x679C;&#x6700;&#x540E;&#x5F53;&#x524D;&#x5230;&#x8FBE;&#x7684;&#x6B65;&#x6570;&#x5927;&#x4E8E;&#x603B;&#x6B65;&#x6570;&#xFF0C;&#x5219;&#x5F52;0&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7684;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x5B66;&#x4E60;&#x7387;&#xFF08;&#x53EF;&#x80FD;&#x662F;warmup&#x5B66;&#x4E60;&#x7387;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x4F59;&#x5F26;&#x8870;&#x51CF;&#x7ED3;&#x679C;&#xFF09;</span>
+    <span class="hljs-keyword">return</span> np.where(global_step &gt; total_steps, <span class="hljs-number">0.0</span>, learning_rate)
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    <span class="hljs-comment"># 1&#x3001;&#x521B;&#x5EFA;&#x6A21;&#x578B;</span>
+    model = Sequential()
+    model.add(Dense(<span class="hljs-number">32</span>, activation=<span class="hljs-string">&apos;relu&apos;</span>, input_dim=<span class="hljs-number">100</span>))
+    model.add(Dense(<span class="hljs-number">10</span>, activation=<span class="hljs-string">&apos;softmax&apos;</span>))
+    model.compile(optimizer=<span class="hljs-string">&apos;rmsprop&apos;</span>,
+                  loss=<span class="hljs-string">&apos;categorical_crossentropy&apos;</span>,
+                  metrics=[<span class="hljs-string">&apos;accuracy&apos;</span>])
+
+    <span class="hljs-comment"># 2&#x3001;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;</span>
+    sample_count = <span class="hljs-number">1000</span>  <span class="hljs-comment"># &#x6837;&#x672C;&#x6570;</span>
+    epochs = <span class="hljs-number">4</span>  <span class="hljs-comment"># &#x603B;&#x8FED;&#x4EE3;&#x6B21;&#x6570;</span>
+    warmup_epoch = <span class="hljs-number">3</span>  <span class="hljs-comment"># warmup &#x8FED;&#x4EE3;&#x6B21;&#x6570;</span>
+    batch_size = <span class="hljs-number">16</span>  <span class="hljs-comment"># &#x6279;&#x6B21;&#x5927;&#x5C0F;</span>
+    learning_rate_base = <span class="hljs-number">0.0001</span>  <span class="hljs-comment"># warmup&#x540E;&#x7684;&#x521D;&#x59CB;&#x5B66;&#x4E60;&#x7387;</span>
+    total_steps = int(epochs * sample_count / batch_size)  <span class="hljs-comment"># &#x603B;&#x8FED;&#x4EE3;&#x6279;&#x6B21;&#x6B65;&#x6570;</span>
+    warmup_steps = int(warmup_epoch * sample_count / batch_size)  <span class="hljs-comment"># warmup&#x603B;&#x6279;&#x6B21;&#x6570;</span>
+
+    <span class="hljs-comment"># 3&#x3001;&#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x6570;&#x636E;</span>
+    data = np.random.random((sample_count, <span class="hljs-number">100</span>))
+    labels = np.random.randint(<span class="hljs-number">10</span>, size=(sample_count, <span class="hljs-number">1</span>))
+    <span class="hljs-comment"># &#x8F6C;&#x6362;&#x76EE;&#x6807;&#x7C7B;&#x522B;</span>
+    one_hot_labels = tf.keras.utils.to_categorical(labels, num_classes=<span class="hljs-number">10</span>)
+
+    <span class="hljs-comment"># 5&#x3001;&#x521B;&#x5EFA;&#x4F59;&#x5F26;warmup&#x8C03;&#x5EA6;&#x5668;</span>
+    warm_up_lr = WarmUpCosineDecayScheduler(learning_rate_base=learning_rate_base,
+                                            total_steps=total_steps,
+                                            warmup_learning_rate=<span class="hljs-number">4e-06</span>,  <span class="hljs-comment"># warmup&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x7387;</span>
+                                            warmup_steps=warmup_steps,
+                                            hold_base_rate_steps=<span class="hljs-number">0</span>,
+                                            )
+
+    <span class="hljs-comment"># &#x8BAD;&#x7EC3;&#x6A21;&#x578B;</span>
+    model.fit(data, one_hot_labels, epochs=epochs, batch_size=batch_size, verbose=<span class="hljs-number">0</span>, callbacks=[warm_up_lr])
+
+    print(warm_up_lr.learning_rates)
+</code></pre>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-python">[<span class="hljs-number">4e-06</span>, <span class="hljs-number">4.513369e-06</span>, ....,  <span class="hljs-number">7.281053e-05</span>, <span class="hljs-number">7.0564354e-05</span>, <span class="hljs-number">6.826705e-05</span>, <span class="hljs-number">6.592433e-05</span>, <span class="hljs-number">6.354202e-05</span>, <span class="hljs-number">6.112605e-05</span>, <span class="hljs-number">5.868241e-05</span>, <span class="hljs-number">5.6217184e-05</span>, <span class="hljs-number">5.3736505e-05</span>, <span class="hljs-number">5.1246534e-05</span>, <span class="hljs-number">4.8753467e-05</span>, <span class="hljs-number">4.6263496e-05</span>, <span class="hljs-number">4.3782813e-05</span>, <span class="hljs-number">4.131759e-05</span>, <span class="hljs-number">3.8873954e-05</span>, <span class="hljs-number">3.6457976e-05</span>, <span class="hljs-number">3.4075667e-05</span>, <span class="hljs-number">3.173295e-05</span>, <span class="hljs-number">2.9435645e-05</span>, <span class="hljs-number">2.7189468e-05</span>, <span class="hljs-number">2.5e-05</span>, <span class="hljs-number">2.2872688e-05</span>, <span class="hljs-number">2.0812817e-05</span>, <span class="hljs-number">1.882551e-05</span>, <span class="hljs-number">1.6915708e-05</span>, <span class="hljs-number">1.5088159e-05</span>, <span class="hljs-number">1.3347407e-05</span>, <span class="hljs-number">1.1697778e-05</span>, <span class="hljs-number">1.0143374e-05</span>, <span class="hljs-number">8.688061e-06</span>, <span class="hljs-number">7.335456e-06</span>, <span class="hljs-number">6.0889215e-06</span>, <span class="hljs-number">4.9515565e-06</span>, <span class="hljs-number">3.9261895e-06</span>, <span class="hljs-number">3.015369e-06</span>, <span class="hljs-number">2.2213596e-06</span>, <span class="hljs-number">1.5461356e-06</span>, <span class="hljs-number">9.913756e-07</span>, <span class="hljs-number">5.584587e-07</span>, <span class="hljs-number">2.4846122e-07</span>, <span class="hljs-number">6.215394e-08</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>]
+</code></pre>
+<h3 id="4104-&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x5B9E;&#x73B0;">4.10.4 &#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x5B9E;&#x73B0;</h3>
+<ul>
+<li>&#x6B65;&#x9AA4;&#xFF1A;<ul>
+<li>1&#x3001;&#x5EFA;&#x7ACB;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;sequence</li>
+<li>2&#x3001;&#x5EFA;&#x7ACB;&#x6A21;&#x578B;&#xFF0C;&#x6307;&#x5B9A;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x76F8;&#x5173;&#x53C2;&#x6570;<ul>
+<li>&#x6A21;&#x578B;&#x4FEE;&#x6539;</li>
+<li>&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x4F18;&#x5316;&#x5668;&#x6307;&#x5B9A;</li>
+</ul>
+</li>
+<li>3&#x3001;&#x6307;&#x5B9A;&#x8BAD;&#x7EC3;&#x7684;callbacks&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x6A21;&#x578B;&#x7684;&#x8BAD;&#x7EC3;</li>
+<li>4&#x3001;&#x8BAD;&#x7EC3;&#x6307;&#x5B9A;</li>
+</ul>
+</li>
+</ul>
+<p>&#x5176;&#x4E2D;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x903B;&#x8F91;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    args = parser.parse_args()
+    train_model(args)
+</code></pre>
+<p>&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4F7F;&#x7528;argparse&#x5DE5;&#x5177;&#xFF1A;pip install argparse</p>
+<pre><code class="lang-python">parser = argparse.ArgumentParser()
+parser.add_argument(<span class="hljs-string">&quot;data_url&quot;</span>, type=str, default=<span class="hljs-string">&apos;./data/garbage_classify/train_data&apos;</span>, help=<span class="hljs-string">&quot;data dir&quot;</span>, nargs=<span class="hljs-string">&apos;?&apos;</span>)
+parser.add_argument(<span class="hljs-string">&quot;train_url&quot;</span>, type=str, default=<span class="hljs-string">&apos;./garbage_ckpt/&apos;</span>, help=<span class="hljs-string">&quot;save model dir&quot;</span>, nargs=<span class="hljs-string">&apos;?&apos;</span>)
+parser.add_argument(<span class="hljs-string">&quot;num_classes&quot;</span>, type=int, default=<span class="hljs-number">40</span>, help=<span class="hljs-string">&quot;num_classes&quot;</span>, nargs=<span class="hljs-string">&apos;?&apos;</span>)
+parser.add_argument(<span class="hljs-string">&quot;input_size&quot;</span>, type=int, default=<span class="hljs-number">300</span>, help=<span class="hljs-string">&quot;input_size&quot;</span>, nargs=<span class="hljs-string">&apos;?&apos;</span>)
+parser.add_argument(<span class="hljs-string">&quot;batch_size&quot;</span>, type=int, default=<span class="hljs-number">16</span>, help=<span class="hljs-string">&quot;batch_size&quot;</span>, nargs=<span class="hljs-string">&apos;?&apos;</span>)
+parser.add_argument(<span class="hljs-string">&quot;learning_rate&quot;</span>, type=float, default=<span class="hljs-number">0.0001</span>, help=<span class="hljs-string">&quot;learning_rate&quot;</span>, nargs=<span class="hljs-string">&apos;?&apos;</span>)
+parser.add_argument(<span class="hljs-string">&quot;max_epochs&quot;</span>, type=int, default=<span class="hljs-number">30</span>, help=<span class="hljs-string">&quot;max_epochs&quot;</span>, nargs=<span class="hljs-string">&apos;?&apos;</span>)
+parser.add_argument(<span class="hljs-string">&quot;deploy_script_path&quot;</span>, type=str, default=<span class="hljs-string">&apos;&apos;</span>, help=<span class="hljs-string">&quot;deploy_script_path&quot;</span>, nargs=<span class="hljs-string">&apos;?&apos;</span>)
+parser.add_argument(<span class="hljs-string">&quot;test_data_url&quot;</span>, type=str, default=<span class="hljs-string">&apos;&apos;</span>, help=<span class="hljs-string">&quot;test_data_url&quot;</span>, nargs=<span class="hljs-string">&apos;?&apos;</span>)
+</code></pre>
+<p>&#x5176;&#x4E2D;nargs&#x662F;&#x4E3A;&#x4E86;&#x5728;pycharm&#x4E2D;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x4E0D;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x503C;&#x4E5F;&#x80FD;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x3002;&#x5426;&#x5219;&#x9700;&#x8981;&#x547D;&#x4EE4;&#x884C;&#x8FD0;&#x884C;</p>
+<pre><code class="lang-python">python train.py data_url .....
+</code></pre>
+<p>1&#x3001;&#x5EFA;&#x7ACB;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;sequence</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> multiprocessing
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">from</span> tensorflow.keras.callbacks <span class="hljs-keyword">import</span> TensorBoard, Callback
+<span class="hljs-keyword">from</span> tensorflow.keras.layers <span class="hljs-keyword">import</span> Dense, GlobalAveragePooling2D
+<span class="hljs-keyword">from</span> tensorflow.keras.models <span class="hljs-keyword">import</span> Model
+<span class="hljs-keyword">from</span> tensorflow.keras.optimizers <span class="hljs-keyword">import</span> Adam, RMSprop
+
+<span class="hljs-keyword">from</span> efficientnet <span class="hljs-keyword">import</span> model <span class="hljs-keyword">as</span> EfficientNet
+<span class="hljs-keyword">from</span> data_gen <span class="hljs-keyword">import</span> data_from_sequence
+<span class="hljs-keyword">from</span> utils.lr_scheduler <span class="hljs-keyword">import</span> WarmUpCosineDecayScheduler
+<span class="hljs-keyword">import</span> os
+os.environ[<span class="hljs-string">&quot;TF_CPP_MIN_LOG_LEVEL&quot;</span>] = <span class="hljs-string">&quot;2&quot;</span>
+<span class="hljs-comment"># &#x6CE8;&#x610F;&#x5173;&#x95ED;&#x9ED8;&#x8BA4;&#x7684;eager&#x6A21;&#x5F0F;</span>
+tf.compat.v1.disable_eager_execution()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">train_model</span><span class="hljs-params">(param)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;
+    :param param: &#x4F20;&#x5165;&#x7684;&#x547D;&#x4EE4;&#x53C2;&#x6570;
+    :return:
+    &quot;&quot;&quot;</span>
+
+    <span class="hljs-comment"># 1&#x3001;&#x5EFA;&#x7ACB;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;sequence</span>
+    train_sequence, validation_sequence = data_from_sequence(param.data_url, param.batch_size,
+                                                             param.num_classes, param.input_size)
+</code></pre>
+<p>2&#x3001;&#x5EFA;&#x7ACB;&#x6A21;&#x578B;&#xFF0C;&#x6307;&#x5B9A;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x76F8;&#x5173;&#x53C2;&#x6570;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># 2&#x3001;&#x5EFA;&#x7ACB;&#x6A21;&#x578B;&#xFF0C;&#x6307;&#x5B9A;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x76F8;&#x5173;&#x53C2;&#x6570;</span>
+model = model_fn(param)
+
+optimizer = Adam(lr=param.learning_rate)
+objective = <span class="hljs-string">&apos;categorical_crossentropy&apos;</span>
+metrics = [<span class="hljs-string">&apos;accuracy&apos;</span>]
+<span class="hljs-comment"># &#x6A21;&#x578B;&#x4FEE;&#x6539;</span>
+<span class="hljs-comment"># &#x6A21;&#x578B;&#x8BAD;&#x7EC3;&#x4F18;&#x5316;&#x5668;&#x6307;&#x5B9A;</span>
+model.compile(loss=objective, optimizer=optimizer, metrics=metrics)
+model.summary()
+
+<span class="hljs-comment"># &#x5224;&#x65AD;&#x6A21;&#x578B;&#x662F;&#x5426;&#x52A0;&#x8F7D;&#x5386;&#x53F2;&#x6A21;&#x578B;</span>
+<span class="hljs-keyword">if</span> os.path.exists(param.train_url):
+    filenames = os.listdir(param.train_url)
+    model.load_weights(filenames[-<span class="hljs-number">1</span>])
+    print(<span class="hljs-string">&quot;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;!!!&quot;</span>)
+
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">model_fn</span><span class="hljs-params">(param)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x4FEE;&#x6539;&#x6A21;&#x578B;&#x51FD;&#x6570;
+    :param param:
+    :return:
+    &quot;&quot;&quot;</span>
+    base_model = EfficientNet.EfficientNetB3(include_top=<span class="hljs-keyword">False</span>, input_shape=(param.input_size, param.input_size, <span class="hljs-number">3</span>),
+                                             classes=param.num_classes)
+    x = base_model.output
+    x = GlobalAveragePooling2D(name=<span class="hljs-string">&apos;avg_pool&apos;</span>)(x)
+    predictions = Dense(param.num_classes, activation=<span class="hljs-string">&apos;softmax&apos;</span>)(x)
+    model = Model(inputs=base_model.input, outputs=predictions)
+    <span class="hljs-keyword">return</span> model
+</code></pre>
+<p>3&#x3001;&#x6307;&#x5B9A;&#x8BAD;&#x7EC3;&#x7684;callbacks&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x6A21;&#x578B;&#x7684;&#x8BAD;&#x7EC3;</p>
+<pre><code class="lang-python">sample_count = len(train_sequence) * param.batch_size
+epochs = param.max_epochs
+warmup_epoch = <span class="hljs-number">5</span>
+batch_size = param.batch_size
+learning_rate_base = param.learning_rate
+total_steps = int(epochs * sample_count / batch_size)
+warmup_steps = int(warmup_epoch * sample_count / batch_size)
+
+warm_up_lr = WarmUpCosineDecayScheduler(learning_rate_base=learning_rate_base,
+                                        total_steps=total_steps,
+                                        warmup_learning_rate=<span class="hljs-number">0</span>,
+                                        warmup_steps=warmup_steps,
+                                        hold_base_rate_steps=<span class="hljs-number">0</span>,
+                                        )
+<span class="hljs-comment">#&#xFF08;3&#xFF09;&#x6A21;&#x578B;&#x4FDD;&#x5B58;&#x76F8;&#x5173;&#x53C2;&#x6570;</span>
+check = tf.keras.callbacks.ModelCheckpoint(param.train_url+<span class="hljs-string">&apos;weights_{epoch:02d}-{val_accuracy:.2f}.h5&apos;</span>,
+                                           monitor=<span class="hljs-string">&apos;val_accuracy&apos;</span>,
+                                           save_best_only=<span class="hljs-keyword">True</span>,
+                                           save_weights_only=<span class="hljs-keyword">False</span>,
+                                           mode=<span class="hljs-string">&apos;auto&apos;</span>,
+                                           period=<span class="hljs-number">1</span>)
+</code></pre>
+<p>4&#x3001;&#x8BAD;&#x7EC3;</p>
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528;model.fit_generator&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x586B;&#x5165;&#x53C2;&#x6570;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5E8F;&#x5217;&#xFF0C;&#x6307;&#x5B9A;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x6570;(multiprocessing.cpu_count() * 0.7&#x3002;</p>
+<pre><code class="lang-python">model.fit_generator(
+        train_sequence,
+        steps_per_epoch=int(sample_count / batch_size),
+        epochs=param.max_epochs,
+        verbose=<span class="hljs-number">1</span>,
+        callbacks=[check, tensorboard, warm_up_lr],
+        validation_data=validation_sequence,
+        max_queue_size=<span class="hljs-number">10</span>,
+        workers=int(multiprocessing.cpu_count() * <span class="hljs-number">0.7</span>),
+        use_multiprocessing=<span class="hljs-keyword">True</span>,
+        shuffle=<span class="hljs-keyword">True</span>
+    )
+</code></pre>
+<h3 id="4105-&#x603B;&#x7ED3;">4.10.5 &#x603B;&#x7ED3;</h3>
+<ul>
+<li>EfficientNet&#x6A21;&#x578B;&#x539F;&#x7406;</li>
+<li>warmup&#x4EE5;&#x53CA;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x5B66;&#x4E60;&#x7387;&#x539F;&#x7406;</li>
+<li>&#x5B8C;&#x6210;&#x5783;&#x573E;&#x5206;&#x7C7B;&#x7684;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;</li>
+<li>&#x5B8C;&#x6210;&#x4F59;&#x5F26;&#x9000;&#x706B;&#x4E0E;warmup&#x7684;&#x5B9E;&#x73B0;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter4/section9.html" class="navigation navigation-prev " aria-label="Previous page: 综合案例：垃圾分类之模型构建"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter4/section11.html" class="navigation navigation-next " aria-label="Next page: 综合案例：模型导出与部署"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters":{},"katex":{},"splitter":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
